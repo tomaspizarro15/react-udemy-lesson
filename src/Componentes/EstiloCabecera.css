@@ -1,0 +1,95 @@
+.Cabecera {
+  box-shadow: 1% black;
+  min-height: 1%;
+  font-size: 2vw;
+  background-color: #282c34;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  color: white;
+
+}
+html, body {
+    font-family: 'Poppins' , sans-serif;
+    margin: 0.25%;
+    height: 100%;
+    background-color:beige;
+}
+#li {
+  float: left;
+}
+#nav {
+  width: 100%;
+  overflow: auto;
+  background-color: black;
+
+}
+.BarraDeOpciones {
+  width: 100%;
+  background-color: #282c34;
+  margin: 0% 0% 0% 0%;
+}
+
+.BotonInicio {
+  padding : 14px;
+  border : 0px solid black; 
+  font-family: 'Roboto', sans-serif;
+  background-color:#282c34 ;
+  color: whitesmoke;
+}
+.HeaderInicio {
+  padding: 14px;
+  margin: 10px 2px;
+  height: 30px;
+  font-size: (8px 2vmin);
+  display: flex;
+  width: auto;
+  text-align: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: whitesmoke;
+  color: whitesmoke;
+  background-color: #282c34;
+}
+
+.FirstHeader {
+  display: flex;
+  background-color : #282c34;
+  margin: 0px;
+}
+body {
+  font-family: 'Poppins' , sans-serif;
+}
+.Position {
+  position: fixed;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family : 'Roboto', sans-serif ;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ad3636;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color:#c7c7c7 ;
+  color: #282c34;
+}

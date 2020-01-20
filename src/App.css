@@ -1,7 +1,7 @@
 .App {
-  text-align: center;
+  width: auto;
+  height: auto;
 }
-
 .App-logo {
   height: 40vmin;
 }
@@ -13,10 +13,26 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(32px + 2vmin);
   color: white;
 }
 
 .App-link {
-  color: #09d3ac;
+  color: #d31709;
+}
+
+
+.App-Hello {
+   background-color : red;
+}
+.App-Title {
+  font-size: calc(48px + 2vmin);
+}
+.App-Boton {
+  color : red;
+  border : 20px;
+}
+.Boton {
+  cursor : pointer;
+  box-shadow: 1px solid black;
 }
