@@ -38,6 +38,9 @@ html, body {
   background-color:#282c34 ;
   color: whitesmoke;
 }
+.borraClase{
+  background-color: #282c34;
+}
 .HeaderInicio {
   padding: 14px;
   margin: 10px 2px;
