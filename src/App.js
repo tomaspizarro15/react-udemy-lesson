@@ -11,10 +11,6 @@ import './Componentes/Titulo.css';
 import './App.css'
 import sideDrawer from './Componentes/SideDrawer/SideDrawer';
 
-
-
-
-
 class Componente1 extends Component {
 
   state = {
@@ -112,6 +108,7 @@ class Componente1 extends Component {
       ':hover': {
         backgroundColor: 'blue',
         color: 'black'
+
       }
     }
     let persons;
