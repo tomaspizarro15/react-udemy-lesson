@@ -3,20 +3,22 @@ import "./MainComponent.css";
 
 const CentralBody = (props) => {
 
+    let mainOneClass = ['main_part_one']
 
-
-    if (props.showArrowComponent) {
-
-
-
+    if(props.showArrow) {
+        mainOneClass = ['main_part_one open']
     }
 
+    let mainTwoClass = ['main_part_two']
 
+    if(props.showArrow) {
+        mainTwoClass = ['main_part_two open']
+    }
     return (
 
         <div className="main_component">
 
-            <div className="main_part_one">
+            <div className= {mainOneClass}>
                 <ul>
                     <li>
                        DOWNLOAD FOR REACT:IOS/MAC
@@ -24,7 +26,7 @@ const CentralBody = (props) => {
                     </li>
                     <li>
                         DOWNLOAD FOR  REACT:WINDOWS
-                        <button>download v 1:2.5.8</button>
+                        <button className ="main_part_one_download_button">download v 1:2.5.8</button>
                     </li>
                 </ul>
 
@@ -32,7 +34,7 @@ const CentralBody = (props) => {
                     <i class="arrow down" onClick={props.click}></i>
                 </ul>
             </div>
-            <div className="main_part_two">
+            <div className={mainTwoClass}>
                 <li>
                     <h1 className="main_part_two_title">React Components</h1>
                     <button className="main_part_two_button">Download</button>

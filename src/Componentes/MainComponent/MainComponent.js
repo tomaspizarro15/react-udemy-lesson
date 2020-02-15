@@ -4,10 +4,27 @@ import "./MainComponent.css";
 
 
 class MainComponents extends Component {
+
+    state = {
+        showArrow: false,
+        showLogIn: false,
+    }
+
+
+    showArrowHandler = () => {
+
+        const newShowArrow = this.state.showArrow;
+
+        this.setState({ showArrow: !newShowArrow })
+
+    }
     render() {
+
         return (
+
             <CentralBody
-                click = {this.showLogInHandler}
+                click={this.showArrowHandler}
+                showArrow={this.state.showArrow}
             />
         )
     };

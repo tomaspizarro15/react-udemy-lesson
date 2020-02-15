@@ -12,9 +12,8 @@ class NavBar extends Component {
     state = {
 
         showSideDrawer: false,
-
+        showArrow: false,
     }
-
 
     showSideDrawerHandler = () => {
 

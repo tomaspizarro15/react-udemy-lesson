@@ -1,15 +1,12 @@
 import React, { Component, useState } from 'react';
 ////////////////////////////////////////////////////
 import NavBar from './Componentes/ResponsiveNavigationBar';
-import SideDrawer from './Componentes/SideDrawer/SideDrawer';
 import Backdrop from './Componentes/Backdrop/Backdrop';
-import Person from "./Componentes/Person";
 import InfoCuerpo from './Componentes/Informacion';
 import Radium, { StyleRoot } from 'radium';
 import './Componentes/Person.css';
 import './Componentes/Titulo.css';
-import './App.css'
-import sideDrawer from './Componentes/SideDrawer/SideDrawer';
+import './App.css';
 
 class Componente1 extends Component {
 
@@ -20,12 +17,14 @@ class Componente1 extends Component {
       { id: '72727272', name: "Maximilian", age: 27, edad: 1989 },
       { id: '12391237', name: "Pablo", age: 26, edad: 1993 }
     ],
-
+    showArrow : false,
     showSideDrawer: false,
     showPersons: true,
     showInfo: false,
     showDatosDelUsuario: true,
   }
+
+
 
   mostrarObjetoHandler = () => {
 
@@ -96,36 +95,18 @@ class Componente1 extends Component {
     this.setState({showSideDrawer : !newShowSideDrawer})
   }
   render() {
-    const style = {
-      backgroundColor: 'green',
-      font: 'inherit',
-      border: "1px , solid blue",
-      padding: '9px',
-      color: 'white',
-      margin: "10%",
-      textaling: 'center',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'blue',
-        color: 'black'
 
-      }
+    const rnd = Math.random(); 
+
+    if(rnd < 0.0001) {
+
     }
-    let persons;
-    let sideDrawer;
-    let showRegister;
-    let showInfor;
-    let content;
-    let informacion;
-    let showDatosDelUsuario;
-    let backdrop;
 
     return (
       <StyleRoot>
         <div className="App" style={{ height: '100%' }} >
-          <NavBar
-          />
-          {backdrop}
+          <NavBar/>
+          <Backdrop/>
           <main style={{ marginTop: '0%' }}>
             <InfoCuerpo />
           </main>

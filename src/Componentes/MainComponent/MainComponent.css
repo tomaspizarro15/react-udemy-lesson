@@ -8,17 +8,30 @@
     border: solid black 2px;
 }
 
-
-
 .main_part_one {
+    width: 100%;
+    z-index: 300;
+    top: 0;
+    position: fixed;
     background-color: #282e28;
     display: flex;
     flex-direction: column;
     margin-top: 0.5%;
     justify-content: center;
     text-align: center;
-    border-bottom:  2px solid rgba(36, 36, 36 , 40%);
+    transform: translateY(0);
+    transition: transform 0.3s ease-out;    
 }
+.main_part_one.open {
+    transform: translateY(-82%);
+    background-color: #282e28;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5%;
+    justify-content: center;
+    text-align: center;
+}
+
 
 
 .main_part_one ul {
@@ -32,7 +45,8 @@
 .main_part_one li {
     display: flex;
     flex-direction: column;
-    margin: 0.5%;
+    margin: 1.5%;
+    width: 100%;
     padding: 6.5%;
     list-style: none;
     color: white;
@@ -42,10 +56,9 @@
 .main_part_one_download_button {
     color: aqua;
     background-color: #000000;
-    width: 60%;
-    margin-left:0px;
-    margin-top: 5.5%;
-    margin-bottom: 0%;
+    width: 100%;
+    padding: 3%;
+    margin: 3% 0% 5% 5%;
     font-family: 'Roboto' ,sans-serif;
     height: 100%;
     font-size: 1vw;
@@ -58,18 +71,18 @@
 }
 i {
     border: solid aqua;
-    border-width: 5px 0px 0px 5px;
+    border-width: 0.21vw 0 0 0.21vw;
     display: inline-block;
-    padding: 8px;
-    margin-bottom: 0.5%;
+    padding: 0.6%;
+    margin-bottom: -0.5%;
   }
 
 i:hover {
     cursor: pointer;
     border: solid white;
-    border-width:6px 0px 0px 6px;
+    border-width: 0.31vw 0px 0px 0.31vw;
     display: inline-block;
-    padding: 8px;
+    padding: 0.6%;
 }
 .down {
     transform: rotate(45deg);
@@ -78,16 +91,33 @@ i:hover {
 
 
 .main_part_two {
+    transition: transform 0.3s ease-out;    
     height: 50%;
     display: flex;
     justify-content: center;
-    margin-bottom: 0%;
-    padding: 10%;
-    padding-bottom: 15%;
+    margin: 3.8% 0% 0% 0%;
+    padding-top: 12%;
+    padding-bottom: 17%;
     background-color: aqua;
-    border-bottom: 20px solid #282e28;
+    border-bottom: 9vw solid #282e28;
    ;
 }
+@media (max-width : 768px) {
+    .main_part_one.open {
+        transform: translateY(-65%);
+     }
+     .main_part_two {
+         height:65% ;
+         padding-bottom: 25%;
+         border-bottom: 7.5vw solid #282e28;
+     }
+     .i {
+        
+     }
+     .i:hover {
+
+     }
+} 
 .main_part_two li {
     width: 100%;
     justify-content: center;
@@ -102,6 +132,7 @@ i:hover {
     width: 20%;
     margin-left: 5%;
     margin-top: 0.5%;
+    margin-bottom: 0%;
     font-family: 'Roboto' ,sans-serif;
     height: 100%;
     font-size: 3vw;
@@ -125,9 +156,11 @@ i:hover {
 
 
 .main_part_three {
-    margin-top: 0%;
-    height: 50%;
+    margin-top: -19%;
+    height: 60%;
+    padding-top: 0%;
     background-color: rgb(255, 255, 255);
+    transform: translateY(25%);
 }
 .main_part_three li {
     font-size: 1.5vw;
