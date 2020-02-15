@@ -1,0 +1,17 @@
+.informacion_cuerpo {
+    display: flex;
+    flex-direction: column;
+    z-index: 200;
+    width: 100%;
+    height: auto;
+
+}
+
+
+.informacion_cuerpo p {
+    left: 10px;
+    top: 10px;
+    margin: auto;
+    font-size: 2vw;
+
+}

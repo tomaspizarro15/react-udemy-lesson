@@ -1,5 +1,4 @@
 import React from 'react'
-import "./EstiloCuerpo.css"
 const DatosDelUsuario = (props) => {
 
     return (

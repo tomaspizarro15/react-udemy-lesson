@@ -1,0 +1,92 @@
+.navbar {
+    width: 100%;
+    height: 5%;
+    z-index: 200;
+    top : 0;
+    left: 0;
+    margin: auto;
+    background-color: #000000;
+    color: antiquewhite;
+    position: fixed; 
+}
+.navbar_logo {
+    margin-left: 5vw;
+}
+.navbar_logo  a{
+    color: white; 
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8vw;
+}
+
+.navigation_bar {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    padding : 0% 1vw;
+}
+
+.spacer {
+    flex: 1; 
+}
+
+.navigationbar_items  a{
+    color: white; 
+    padding:  0;
+    font-size: 1.2vw;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+
+}
+.navigationbar_items  a:hover{
+    
+    color: #00eeff; 
+    font-size: 1.22vw; 
+    text-decoration: none
+    ;
+    
+}
+
+.navigationbar_items  a:active{
+    color: #175282; 
+    text-decoration: none;
+    
+}
+
+.navigationbar_items li {
+    padding: 3vw;
+}
+
+.navigationbar_items ul {
+    display: flex; 
+    margin: 0;
+    padding : 0; 
+    list-style: none;
+
+}
+
+.navbar_logo  a{
+    color: white;
+    font-family: 'Roboto' ,sans-serif;
+    font-size: 1.7vw;
+}
+.navbar_logo  a:hover {
+    font-size: 1.8vw;
+    color : #00eeff
+}
+
+@media (max-width : 768px) {
+    .navigationbar_items {
+        display: none;
+    }
+
+    .navbar_logo {
+        margin-left: 40vw;
+    }
+    .navbar_logo a {
+        font-size: 3.5vw;
+    }
+    .navbar_logo a:hover {
+        font-size: 3.5vw;
+    }
+}

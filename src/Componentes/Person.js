@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 
 const Person = (props) => {
+
+
+    
     return (
-        <div className="Person">
-            <p>Inser your data </p>
-            <input type="text" onChange={props.changed} value = {props.name}>{}</input>
-            <input type = "text" onChange = {props.changedBirthDate}></input>
-            <input type="number" onChange = {props.changedAge} value = {props.age}></input>
-        <p onClick={props.click}> im {props.name} and im {props.age} years old  and my birthday is {props.birthDate}</p>
+
+        <div>
+            <div className = 'Person'>
+                <p>
+                    PERSON COMPONENTS
+                </p>
+            </div>
+            <div className="Person">
+                <h1 className='Parrafo' onClick={props.click} onChange={props.changed}>
+                    Im {props.name} and  I am {props.age} years old
+            </h1>
+                <p>
+                    Click my Name to eliminate me
+            </p>
+            </div>
         </div>
     )
+
 }
+
 export default Person; 

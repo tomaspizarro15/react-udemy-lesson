@@ -1,193 +1,144 @@
 import React, { Component, useState } from 'react';
 ////////////////////////////////////////////////////
-import DatosDelUsuario from './Componentes/DatosDelUsuario';
+import NavBar from './Componentes/ResponsiveNavigationBar';
+import SideDrawer from './Componentes/SideDrawer/SideDrawer';
+import Backdrop from './Componentes/Backdrop/Backdrop';
 import Person from "./Componentes/Person";
 import InfoCuerpo from './Componentes/Informacion';
-import './Componentes/EstiloCuerpo.css';
+import Radium, { StyleRoot } from 'radium';
+import './Componentes/Person.css';
 import './Componentes/Titulo.css';
 import './App.css'
+import sideDrawer from './Componentes/SideDrawer/SideDrawer';
+
+
+
+
+
 class Componente1 extends Component {
 
   state = {
-
     bienvenido: [{ name: "Timothy" }],
-
     persons: [
-      { id : '15703728' , name: "Tomás", age: 19 ,  birthDate : 2000 },
-      { id : '72727272' , name: "Maximilian", age: 27 },
-      { id : '12391237' , name : "Pablo" , age : 26 } 
+      { id: '15703728', name: "Tomás", age: 19, edad: 2000 },
+      { id: '72727272', name: "Maximilian", age: 27, edad: 1989 },
+      { id: '12391237', name: "Pablo", age: 26, edad: 1993 }
     ],
+
+    showSideDrawer: false,
     showPersons: true,
     showInfo: false,
     showDatosDelUsuario: true,
   }
-  mostrarComponentesHandler = () => {                   // Este metodo sirve para que se muestren condicionalmente los distintos componentes renderizados por react 
-      const showPersons = this.state.showPersons;  
-      const showInfo = this.state.showInfo  ;           // ESTUDIAR ESTO 
-      const showDatosDelUsuario = this.state.showDatosDelUsuario ;
 
+  mostrarObjetoHandler = () => {
 
-      this.setState({ showPersons: !showPersons})
-      this.setState({ showInfo: !showInfo })
-      this.setState({showDatosDelUsuario : !showDatosDelUsuario})
-    }
-  deletePersonHandler = (personIndex) => {
-        const persons = [...this.state.persons];      // Esto es necesario para poder manipular a persons dentro de cada metodo
-        persons.splice(personIndex , 1)
-        this.setState({persons : persons})
+    const newShowObjeto = true;
+
+    this.setState({ showObjeto: !newShowObjeto })
+  }
+  mostrarSideDrawerHandler = () => {
+    const newSideDrawer = this.state.sideDrawer;
+
+    this.setState({ sideDrawer: !newSideDrawer })
   }
 
-  nameChangedHandler = (event , id) => {
+  deletePersonHandler = (personIndex) => {
+    const newPersons = [...this.state.persons];      // Esto es necesario para poder manipular a persons dentro de cada metodo
+    newPersons.splice(personIndex, 1)
+    this.setState({ persons: newPersons })
+  }
 
+  nameChangedHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(person => {
 
-      return person.id === id; 
-
-      
-
-    });
-
-    const person = { ...this.state.persons[personIndex]};  //Crea copia del Objeto y lo asigna a const person y a la posicion de personIndex que encontro el Index o ID de la persona 
-
-    person.name = event.target.value;
-
-    const persons = [...this.state.persons] // Crea copia del Array 
-    persons[personIndex] = person;  
-
-    this.setState ({
-
-      persons: persons
-    
-    }) ;
-  
-  }
-
-  alertaMayra = () => {
-    
-    return( 
-      alert()
-    )
-
-  }
-
-
-  ageChangedHandler = (event , id) => {
-
-    const personIndex = this.state.persons.findIndex(person => {    // personIndex no es nada mas que un numero 
-
-      return person.id === id; 
-      
+      if (person.id === id) {
+        return person.id;
+      }
 
     })
-
     const person = {
       ...this.state.persons[personIndex]
     }
 
-    person.age = event.target.value; 
+    person.edad = event.target.value;
 
-    const persons = [...this.state.persons]
+    const newPersonsArray = [...this.state.persons]
 
-    persons[personIndex] = person; 
-    
+    newPersonsArray[personIndex] = person;
+
     this.setState(
-      {
-        persons: persons
-      }
-    ) 
+      { persons: newPersonsArray }
+    )
   }
 
-  birthDateChangedHandler = (event , id) => {
+  edadChangedHandler = (event, id) => {
 
-    const personIndex = this.state.persons.findIndex( person => {
-
-
-      return person.id === id; 
-      
-    }) 
-
+    const personIndex = this.state.persons.findIndex(person => {
+      return person.id === id;
+    })
     const person = {
-     ...this.state.persons[personIndex]
+      ...this.state.persons[personIndex]
     }
-    person.birthDate = event.target.value; 
+    person.edad = event.target.value;
 
-    const persons = [...this.state.persons]
+    const newPersonsArray = [...this.state.persons]
 
-    persons[personIndex] = person; 
+    newPersonsArray[personIndex] = person;
 
-    this.setState({
-      persons: persons
-    });
+    this.setState(
+      { persons: newPersonsArray }
+    )
 
-  } 
 
+  }
+  
+  ocultarSideDrawerHandler = () => {
+
+    const newShowSideDrawer = this.state.showSideDrawer;
+
+    this.setState({showSideDrawer : !newShowSideDrawer})
+  }
   render() {
+    const style = {
+      backgroundColor: 'green',
+      font: 'inherit',
+      border: "1px , solid blue",
+      padding: '9px',
+      color: 'white',
+      margin: "10%",
+      textaling: 'center',
+      cursor: 'pointer',
+      ':hover': {
+        backgroundColor: 'blue',
+        color: 'black'
+      }
+    }
     let persons;
+    let sideDrawer;
     let showRegister;
     let showInfor;
+    let content;
+    let informacion;
     let showDatosDelUsuario;
-  
-
-    if (!this.state.showDatosDelUsuario) {
-      showRegister = (
-        <div>
-          {this.state.bienvenido.map(person => {
-            return ( 
-                <DatosDelUsuario
-                  name={person.name}
-                ></DatosDelUsuario>
-              
-
-            )
-          })}
-        </div>
-
-      );
-    }
-    if (!this.state.showInfo) {
-      showInfor = (
-       <InfoCuerpo></InfoCuerpo>
-      );
-    }
-
-    if (!this.state.showPersons) {
-      persons = (
-        <div>
-          {this.state.persons.map((person , index)=> {
-            return (
-              <Person
-                key = {person.id}
-                name={person.name}
-                age={person.age}
-                click = { () => this.deletePersonHandler()}
-                changed= { (event) => this.nameChangedHandler(event , person.id) }
-                changedAge = {(event) => this.ageChangedHandler(event, person.id)}
-                changedBirthDate = {(event) => this.birthDateChangedHandler(event ,person.id)}
-              />
-            )
-          })}
-        </div>
-      )
-
-    }
+    let backdrop;
 
     return (
-      <div className="App" >
-        <title>Aplicacion React</title>
-        <div className="DivisionTitulo">
-          <button className="BotonIngresar" onClick={this.mostrarComponentesHandler}>Log in</button>
+      <StyleRoot>
+        <div className="App" style={{ height: '100%' }} >
+          <NavBar
+          />
+          {backdrop}
+          <main style={{ marginTop: '0%' }}>
+            <InfoCuerpo />
+          </main>
         </div>
-        {showInfor}
-        <div>
-          {showRegister}
-          {persons}
-        </div>
-      </div>
+      </StyleRoot>
     )
   }
 }
 
-export default Componente1;
+export default Radium(Componente1);
 
 
 

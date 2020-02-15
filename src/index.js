@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import Header  from "./Componentes/Cabecera";
-import Titulo from "./Componentes/Titulo";
+import NavBar from './Componentes/ResponsiveNavigationBar';
 import App from './App';
+import MainComponents from './Componentes/MainComponent/MainComponent';
 ReactDOM.render((<App/>) , document.getElementById('root'));
-ReactDOM.render((<Header/>) , document.getElementById('header'));
+ReactDOM.render((<MainComponents/>) , document.getElementById('main'));
+ReactDOM.render((<NavBar/>) , document.getElementById('navBar'))
 
 
 // If you want your app to work offline and load faster, you can change

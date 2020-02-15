@@ -1,0 +1,17 @@
+ <title>Aplicacion React</title>
+        <div className="DivisionTitulo" style ={{ marginTop : '0%'}}>
+          <p className={classes.join(' ')}>this is really working</p>
+          <button
+            onClick={this.mostrarComponentesHandler}>
+            Log in
+          </button>
+        </div>
+        <div>
+          <button  className = "botonPrueba"> ¡Click me! </button>
+          {informacion}
+          {content}
+        </div>
+        <div>
+          {showRegister}
+          {persons}
+        </div>
