@@ -2,10 +2,7 @@ import React, { Component, useState } from 'react';
 ////////////////////////////////////////////////////
 import NavBar from './Componentes/ResponsiveNavigationBar';
 import Backdrop from './Componentes/Backdrop/Backdrop';
-import InfoCuerpo from './Componentes/Informacion';
 import Radium, { StyleRoot } from 'radium';
-import './Componentes/Person.css';
-import './Componentes/Titulo.css';
 import './App.css';
 
 class Componente1 extends Component {
@@ -17,7 +14,7 @@ class Componente1 extends Component {
       { id: '72727272', name: "Maximilian", age: 27, edad: 1989 },
       { id: '12391237', name: "Pablo", age: 26, edad: 1993 }
     ],
-    showArrow : false,
+    showArrow: false,
     showSideDrawer: false,
     showPersons: true,
     showInfo: false,
@@ -77,38 +74,49 @@ class Componente1 extends Component {
     }
     person.edad = event.target.value;
 
-    const newPersonsArray = [...this.state.persons]
+    const newPersonsArray = [...this.state.persons] //DOING A BACKUP ARRAY
 
     newPersonsArray[personIndex] = person;
 
     this.setState(
       { persons: newPersonsArray }
     )
+  }
 
+  findIndexPersonHandler = (event, id) => {
+
+    const EncontrandoElID = this.state.persons.findIndex(person => {
+
+      return person.id === id;
+    }
+    )
+
+    const IDPersona = { 
+      ...this.state.persons[EncontrandoElID]
+    }
 
   }
-  
+
   ocultarSideDrawerHandler = () => {
 
     const newShowSideDrawer = this.state.showSideDrawer;
 
-    this.setState({showSideDrawer : !newShowSideDrawer})
+    this.setState({ showSideDrawer: !newShowSideDrawer })
   }
   render() {
 
-    const rnd = Math.random(); 
+    const rnd = Math.random();
 
-    if(rnd < 0.0001) {
+    if (rnd < 0.0001) {
 
     }
 
     return (
       <StyleRoot>
         <div className="App" style={{ height: '100%' }} >
-          <NavBar/>
-          <Backdrop/>
+          <NavBar />
+          <Backdrop />
           <main style={{ marginTop: '0%' }}>
-            <InfoCuerpo />
           </main>
         </div>
       </StyleRoot>

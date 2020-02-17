@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./NavBar.css"
+import "./ResponsiveNavigationBar.css"
 import DrawerToggleButton from './SideDrawer/DrawerToggleButton';
 import SideDrawer from './SideDrawer/SideDrawer';
 import Backdrop from './Backdrop/Backdrop';
@@ -40,13 +40,14 @@ class NavBar extends Component {
                                 click={this.showSideDrawerHandler}
                             />
                         </div>
-
                         <SideDrawer
                             click = {this.showSideDrawerHandler}
                             show =  {this.state.showSideDrawer}
                         />
-
                         <div className="navbar_logo"><a href="/">React</a></div>
+                        <div className = "navbar_search_bar">
+                            <input type = "text" className value = {null}></input>
+                        </div>
                         <div className="spacer" />
                         <div className="navigationbar_items">
                             <ul>
