@@ -5,6 +5,7 @@ import Backdrop from './Componentes/Backdrop/Backdrop';
 import Radium, { StyleRoot } from 'radium';
 import './App.css';
 
+
 class Componente1 extends Component {
 
   state = {
@@ -114,11 +115,12 @@ class Componente1 extends Component {
     return (
       <StyleRoot>
         <div className="App" style={{ height: '100%' }} >
-          <NavBar />
-          <Backdrop />
+          <Backdrop/>
+          <NavBar />  
           <main style={{ marginTop: '0%' }}>
-          </main>
+          </main> 
         </div>
+        
       </StyleRoot>
     )
   }

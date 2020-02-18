@@ -79,6 +79,7 @@ const CentralBody = (props) => {
                                 Im from Argentina, Mendoza, the wine capitol ,
                                 im 19 , im studing Programming in UTN , and making intensive Udemy React curses
                          </p>
+                         <div></div>
                         </li>
                     </ul>
                 </div>

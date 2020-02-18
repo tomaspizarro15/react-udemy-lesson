@@ -7,7 +7,7 @@ import App from './App';
 import MainComponents from './Componentes/MainComponent/MainComponent';
 ReactDOM.render((<App/>) , document.getElementById('root'));
 ReactDOM.render((<MainComponents/>) , document.getElementById('main'));
-ReactDOM.render((<NavBar/>) , document.getElementById('navBar'))
+ReactDOM.render((<NavBar/>) , document.getElementById('navbar'))
 
 
 // If you want your app to work offline and load faster, you can change

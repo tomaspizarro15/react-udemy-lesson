@@ -31,7 +31,7 @@ class NavBar extends Component {
         return (
             <div>
                 <Backdrop
-                    click={this.hideSideDrawerHandler}
+                  
                 />
                 <header className="navbar">
                     <nav className="navigation_bar">

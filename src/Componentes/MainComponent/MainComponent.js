@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import CentralBody from './CentralBody';
 import "./MainComponent.css";
-
+import LowComponent from '../LowComponent/LowComponent';
 
 class MainComponents extends Component {
 
     state = {
         showArrow: false,
+        showBackDrop : false,
         showLogIn: false,
+    }
+
+    showBackDropHandler =() => {
+        this.setState({showArrow : true})
     }
 
 
@@ -22,10 +27,13 @@ class MainComponents extends Component {
 
         return (
 
-            <CentralBody
-                click={this.showArrowHandler}
-                showArrow={this.state.showArrow}
-            />
+            <div>
+                <CentralBody
+                    click={this.showArrowHandler}
+                    showArrow={this.state.showArrow}
+                />
+                <LowComponent/>
+            </div>
         )
     };
 }
