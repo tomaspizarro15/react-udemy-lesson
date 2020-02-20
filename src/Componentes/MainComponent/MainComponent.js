@@ -27,12 +27,11 @@ class MainComponents extends Component {
 
         return (
 
-            <div>
+            <div style ={{height : '100%'}}>
                 <CentralBody
                     click={this.showArrowHandler}
                     showArrow={this.state.showArrow}
                 />
-                <LowComponent/>
             </div>
         )
     };

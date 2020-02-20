@@ -22,7 +22,7 @@ const CentralBody = (props) => {
 
     let fixerClass = ['fixer']
 
-    if(props.showArrow) {
+    if (props.showArrow) {
         fixerClass = ['fixer open']
     }
     return (
@@ -47,12 +47,14 @@ const CentralBody = (props) => {
                     <i class={arrowClass} onClick={props.click}></i>
                 </ul>
             </div>
-            <div className = {fixerClass}>
+            <div className={fixerClass}>
                 <div className={mainTwoClass}>
-                    <li>
-                        <h1 className="main_part_two_title">React Components</h1>
-                        <button className="main_part_two_button" onClick={props.click}>Download</button>
-                    </li>
+                    <ul>
+                        <li>
+                            <h1 className="main_part_two_title">React Components</h1>
+                            <button className="main_part_two_button" onClick={props.click}>Download</button>
+                        </li>
+                    </ul>
                 </div>
 
                 <div className="main_part_three">
@@ -79,7 +81,7 @@ const CentralBody = (props) => {
                                 Im from Argentina, Mendoza, the wine capitol ,
                                 im 19 , im studing Programming in UTN , and making intensive Udemy React curses
                          </p>
-                         <div></div>
+                            <div></div>
                         </li>
                     </ul>
                 </div>

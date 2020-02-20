@@ -1,13 +1,14 @@
 .main_low_component {
-    z-index: 200;
+    z-index: 150;
     position: relative;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
   
 }
 
 .main_low_component ul {
-    background-color:rgba(113, 192, 113 ,0.4) ;
+    background-color: #000000;
     display: flex;
+    justify-content: center;
     margin: 1% 1% 1% 1%;
     box-shadow: 2px 2px 20px 3px black;
     flex-direction:row ;
@@ -21,7 +22,7 @@
     box-shadow: 2px 2px 2px 2px;
     display: flex;
     flex-direction:column ;
-    margin: 1% 0% 1% 1%;
+    margin: 0.5% 0.5% 0% 0%;
 }
 
 .main_low_component h1  {
@@ -36,4 +37,23 @@
 
     box-shadow: 2px 2px 2px 2px rgba(113, 192, 113 ,1.5);
 
+}
+
+@media (max-width : 768px) {
+
+    .main_low_component ul {
+        flex-direction: column;
+        
+        margin: 0%;
+        width: 98%;
+        margin-left: 1%;
+        background-color: white;
+        box-shadow: 5px 5px 20px 2px ;
+    }
+    .main_low_component li {
+        width: 65%;
+        justify-content: center;
+        box-shadow: 5px 5px 20px 2px ;
+    }
+    
 }

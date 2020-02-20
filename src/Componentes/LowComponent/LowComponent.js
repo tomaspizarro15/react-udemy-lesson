@@ -20,20 +20,23 @@ class LowComponent extends Component {
                 <ul>
                     <li href="/">
                         <h1>Title</h1>
-                        <p>Content</p>
+                        <p>Content Content Content Content Content Content</p>
                     </li>
                     <li href="/">
                         <h1>Title</h1>
-                        <p>Content</p>
+                        <p>Content Content Content Content Content Content</p>
                     </li>
                     <li href="/">
                         <h1>Title</h1>
-                        <p>Content</p>
+                        <p>Content Content Content Content Content Content
+                            
+                        </p>
                     </li>
                     <li href="/">
                         <h1>Title</h1>
-                        <p>Content</p>
+                        <p>Content Content Content Content Content Content</p>
                     </li>
+                    
                 </ul>
             </div>
         );

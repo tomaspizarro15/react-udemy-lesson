@@ -6,7 +6,6 @@ import NavBar from './Componentes/ResponsiveNavigationBar';
 import App from './App';
 import MainComponents from './Componentes/MainComponent/MainComponent';
 ReactDOM.render((<App/>) , document.getElementById('root'));
-ReactDOM.render((<MainComponents/>) , document.getElementById('main'));
 ReactDOM.render((<NavBar/>) , document.getElementById('navbar'))
 
 

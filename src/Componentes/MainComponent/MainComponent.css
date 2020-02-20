@@ -116,8 +116,9 @@ i:hover {
     margin: 0% 0% 0% 0%;
     padding-top: 13%;
     padding-bottom: 13%;
-    background-color:rgb(113, 192, 113);
+    background-color : #202020;
     border-bottom: 9vw solid #282e28;
+    box-shadow: 2px 2px 2px 20px ;
    ;
 }
 
@@ -128,21 +129,16 @@ i:hover {
         transform: translateY(-95%);
      }
      .main_part_two {
-         margin: 0;
+         margin: 0%;
          height:65% ;
-         padding-bottom: 1%;
+         padding-bottom: 12%;
          padding-top: 12%;
          border-bottom: 7.5vw solid #282e28;
      }
-     .i {
-        
-     }
-     .i:hover {
-
-     }
+  
 } 
 .main_part_two li {
-    width: 100%;
+    width: 120%;
     justify-content: center;
     list-style: none;
     display: flex;
@@ -150,29 +146,32 @@ i:hover {
 }
 
 .main_part_two_button {
-    color:rgb(113, 192, 113);
-    background-color: #000000;
-    width: 20%;
+    background-color: rgb(74, 202, 74);
+    color:white;
+    width: 30%;
     margin-left: 5%;
-    margin-top: 0.5%;
+    margin-top: 1%;
     margin-bottom: 0%;
     font-family: 'Roboto' ,sans-serif;
     height: 100%;
     font-size: 3vw;
     cursor: pointer;
-    border-radius: 80px;
-    border-color: #000000;
+    border-radius: 4px;
+    border-color: #252525;
 }
 
 .main_part_two_button:hover {
-    color: white;
+    color: rgb(74, 202, 74);
     background-color: #000000;
+    box-shadow: 0.1px 0.1px 12px 0.1px rgba(74, 202, 74 , 30%);
 }
 
 .main_part_two_title {
+    color: white;
+    width: 70%;
     margin: 0;
     font-family: 'roboto' , sans-serif;
-    font-size: 4.5vw ;
+    font-size: 4vw ;
 }
 
 .main_part_three {

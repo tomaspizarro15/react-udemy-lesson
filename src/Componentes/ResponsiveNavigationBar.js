@@ -18,11 +18,8 @@ class NavBar extends Component {
     showSideDrawerHandler = () => {
 
         const newShowSideDrawer = this.state.showSideDrawer;
-
-
+        
         this.setState({ showSideDrawer: !newShowSideDrawer })
-
-
     }
 
     render() {
@@ -46,7 +43,9 @@ class NavBar extends Component {
                         />
                         <div className="navbar_logo"><a href="/">React</a></div>
                         <div className = "navbar_search_bar">
+                            <label>Search</label>
                             <input type = "text" className value = {null}></input>
+                            
                         </div>
                         <div className="spacer" />
                         <div className="navigationbar_items">

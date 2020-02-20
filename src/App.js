@@ -4,6 +4,8 @@ import NavBar from './Componentes/ResponsiveNavigationBar';
 import Backdrop from './Componentes/Backdrop/Backdrop';
 import Radium, { StyleRoot } from 'radium';
 import './App.css';
+import MainComponents from './Componentes/MainComponent/MainComponent';
+import LowComponent from './Componentes/LowComponent/LowComponent';
 
 
 class Componente1 extends Component {
@@ -119,6 +121,8 @@ class Componente1 extends Component {
           <NavBar />  
           <main style={{ marginTop: '0%' }}>
           </main> 
+          <MainComponents/>
+          <LowComponent/>
         </div>
         
       </StyleRoot>
