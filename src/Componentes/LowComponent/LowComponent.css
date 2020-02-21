@@ -1,59 +1,78 @@
 .main_low_component {
-    z-index: 150;
+    top: 50%;
+    margin: 2vmin 0 2vmin 0;
+    display: flex;
+    flex-direction: row;
+    z-index: 200;
+    color: rgb(0, 0, 0);
     position: relative;
-    background-color: rgb(0, 0, 0);
-  
+    background-color: rgb(255, 255, 255);
+    width: 100%;
 }
 
 .main_low_component ul {
-    background-color: #000000;
-    display: flex;
-    justify-content: center;
-    margin: 1% 1% 1% 1%;
-    box-shadow: 2px 2px 20px 3px black;
-    flex-direction:row ;
-    padding: 0;
+   width: 100%;
+   margin: 0 0.5vmin 0 0.5vmin;
+   padding: 0 0 0 0;
+   display: flex;
+   flex-direction: row;
+   background-color: rgb(255, 255, 255);
 }
 
 .main_low_component li {
-    width: 100%;
+    list-style: none;
+    width: 90%;
+    margin: 1vmin 0.5vmin 0.5vmin 1vmin ;
+    padding: 8vmin 18.5vmin 8vmin 18.5vmin ;
     background-color: white;
     text-align: center;
-    box-shadow: 2px 2px 2px 2px;
+    box-shadow: 2px 2px 22px 2px;
+    border-radius: 3px;
+
+}
+
+.main_low_tarjetas {
+    width: 90%;
     display: flex;
-    flex-direction:column ;
-    margin: 0.5% 0.5% 0% 0%;
+    flex-direction: row;
+    margin-left: 0.5%;
+
+}
+.main_low_arrow_right {
+    position: relative;
+    width: 20px;
+    top:45%;
+    left: 4%;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    background-color:transparent;
+    margin-bottom: 0%;
+    
+  
 }
 
-.main_low_component h1  {
-    font-size: 2.5vw;
+i {
+    opacity: 50%;
+    size: 20px 20px;
+    border-color: black;
+    padding: 5px 12px 5px 5px;
+    border-width: 3px 3px 0  0;
+    transform: rotate(45deg);
+    border-radius: 1px;
 }
-.main_low_component p {
 
-    font-size: 1.5vw;
+
+i:hover{
+    opacity: 110%;
+    border-color: black;
+    padding: 5px 12px 5px 5px;
+    border-width: 3.5px 3.5px 0  0;
     
 }
-.main_low_component li:hover {
 
-    box-shadow: 2px 2px 2px 2px rgba(113, 192, 113 ,1.5);
+.main_low_arrow_right i {
+    border-width: 10%;
+    border-bottom: 5px;
 
-}
-
-@media (max-width : 768px) {
-
-    .main_low_component ul {
-        flex-direction: column;
-        
-        margin: 0%;
-        width: 98%;
-        margin-left: 1%;
-        background-color: white;
-        box-shadow: 5px 5px 20px 2px ;
-    }
-    .main_low_component li {
-        width: 65%;
-        justify-content: center;
-        box-shadow: 5px 5px 20px 2px ;
-    }
-    
 }
