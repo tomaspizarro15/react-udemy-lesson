@@ -18,7 +18,7 @@ class NavBar extends Component {
     showSideDrawerHandler = () => {
 
         const newShowSideDrawer = this.state.showSideDrawer;
-        
+
         this.setState({ showSideDrawer: !newShowSideDrawer })
     }
 
@@ -26,41 +26,27 @@ class NavBar extends Component {
 
 
         return (
-            <div>
-                <Backdrop
-                  
-                />
-                <header className="navbar">
-                    <nav className="navigation_bar">
-                        <div>
-                            <DrawerToggleButton
-                                click={this.showSideDrawerHandler}
-                            />
-                        </div>
-                        <SideDrawer
-                            click = {this.showSideDrawerHandler}
-                            show =  {this.state.showSideDrawer}
-                        />
-                        <div className="navbar_logo"><a href="/">React</a></div>
-                        <div className = "navbar_search_bar">
-                            <label>Search</label>
-                            <input type = "text" className value = {null}></input>
-                            
-                        </div>
-                        <div className="spacer" />
-                        <div className="navigationbar_items">
-                            <ul>
-                                <li onClick={this.showContentHandler}><a href="/">Store</a></li>
-                                <li onClick={this.showContentHandler}><a href="/">Products</a></li>
-                                <li onClick={this.showContentHandler}><a href="/">Log in </a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </header>
-                <div>
+            <div className="nav_bar">
+                <div className="nav_bar_button"><DrawerToggleButton /></div>
+                <div className="nav_bar_title">
+                    <li>React</li>
+                </div>
+                <div className="spacer"></div>
+                <div className="nav_bar_input">
+                    <input type="text"></input>
+                </div>
+
+                <div className="nav_bar_li">
+
+                    <ul>
+                        <li href="#">Products</li>
+                        <li href="#">Settings</li>
+                        <li href="#">Community</li>
+                    </ul>
+
                 </div>
             </div>
-        )
+        );
     }
 
 }

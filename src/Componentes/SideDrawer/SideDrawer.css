@@ -40,7 +40,7 @@
     .side_drawer_head b {
         font-size: 2.5vw;
     }
-})
+}
 .side_drawer_head b:hover {
     font-size: 1.8vw;
     color: aliceblue;

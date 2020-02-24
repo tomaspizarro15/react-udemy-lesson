@@ -57,21 +57,7 @@ class LowComponent extends Component {
 
 
             <div className="main_low_component">
-                <ul>
-                    <div className="main_low_arrow_left">
-                        <a className="arrow left">a</a>
-                    </div>
-                    <div className="main_low_tarjetas">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </div>
-                    <div className="main_low_arrow_right">
-                        <i className="arrow right"></i>
-                    </div>
-                </ul>
+               
             </div>
         );
     }
