@@ -56,8 +56,25 @@ class LowComponent extends Component {
         return (
 
 
-            <div className="main_low_component">
+            <div className="low_component">
                
+                <div className = "low_component_tarjetas">
+                    <ul>
+                        <li>
+                            <h1>title</h1>
+                            <p>Content</p>
+                        </li>
+                        <li>
+                            <h1>title</h1>
+                            <p>Content</p>
+                        </li>
+                        <li>
+                            <h1>title</h1>
+                            <p>Content</p>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         );
     }

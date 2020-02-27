@@ -4,7 +4,7 @@ height: 100%;
 position: fixed;
 top: 0; 
 left: 0; 
-background: rgba(255, 255, 255, 0.5);
+background: #1b1b1b;
 z-index:200;
 }
 

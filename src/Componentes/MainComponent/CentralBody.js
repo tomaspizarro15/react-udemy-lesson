@@ -1,39 +1,91 @@
 import React from 'react';
 import "./MainComponent.css";
+import LowComponent from '../LowComponent/LowComponent';
 
 const CentralBody = (props) => {
 
+    let mainUnoClasses = 'main_uno';
+
+
+    if (props.showDescarga === true) {
+        mainUnoClasses = 'main_uno close';
+    }
+
     return (
 
-        <div className="main">
-            <div className="main_uno">
-                <div className="uno_button_left">
-                    <h1>React for Windows</h1>
-                    <p>V 1.23.3</p>
-                    <button>Download</button>
+
+
+        <div className="main_component">
+
+            <div className={mainUnoClasses}>
+                <div className='main_uno_descarga' >
+                    <div className="uno_content">
+                        <h1>React for Windows</h1>
+                        <p>Latest version of React</p>
+                        <p>V 1.23.3</p>
+                        <div>
+                            <button>Download</button>
+                        </div>
+                    </div>
+                    <div className="uno_content">
+                        <h1>React for MAC</h1>
+                        <p>Current version for Apple Devices</p>
+                        <p>V 1.23.3</p>
+                        <div>
+                            <button>Download</button>
+                        </div>
+                    </div>
                 </div>
-                <div className="uno_spacer"></div>
-                <div className="uno_button_right">
-                    <h1>React for MAC</h1>
-                    <p>V 1.22.7</p>
-                    <button>Download</button>
+                <div className="main_uno_arrow">
+                    <i onClick={props.clickArrow}></i>
                 </div>
+
             </div>
-            <div className='uno_arrow'><i>Arrow</i></div>
-            <div></div>
+            <div className="main_central">
+                <h1>Let's Begin</h1>
+                
+                   <div className ="main_central_button">
+                       <button>Start now</button>
+                   </div>
+            
+            </div>
+            <div className="main_dos">
+                <ul>
+                    <li>
+                        <h1>About React</h1>
+                        <p>
+                            React makes it painless to create interact
+                            ve UIs. Design simple views for each state in your application,
+                            and React will efficiently update and render just the right components when your data changes.
+                            Declarative views make your
+                            code more predictable and easier to debug.</p>
+                        <button  className ="button_more"onClick={props.redirectReact}>React site</button>
+                    </li>
+                    <li>
+                        <h1>About me</h1>
+                        <p>Hi, I'm Tomás Pizarro , a 19 years old
+                            Javascript Developer  an Programming studant in National Technological
+                            University of Mendoza , Argentina,
+                            I use React Library in my WebPages , I work in Visual Studio Code
+                            Please , visit my Git Hub profile
+                        </p>
+                        <button className ="button_more" onClick={props.redirectGH}>Git Hub Profile</button>
+                    </li>
+                    <li>
+                        <h1>About Mendoza</h1>
+                        <p>t is located at a strategic geopolitical point within the
+                            Central Bioceanic Corridor. Steady growth during recent years and the diversification of
+                            productive activities has made Mendoza one of the most developed provinces in the country of Argentina
+                              </p>
+                        <button className ="button_more" onClick={props.redirectMendoza}>Mendoza site</button>
+                    </li>
+                </ul>
+
+            </div>
+            <div>
+                <LowComponent />
+            </div>
         </div>
-
-
     );
-
-
-
-
 }
-
 export default CentralBody;
-
-
-
-
-

@@ -2,9 +2,9 @@
     display : flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 1.5vw;
-    margin: 5% 0 0 5%;
     width: 10vw;
+    margin-top: 2%;
+    margin-left: 1vw;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -24,6 +24,7 @@
 
 @media (max-width : 768px) {
     .toggle_button {
-        margin: 5% 0 0 15%;
+        margin-top:18%;
+        margin-left: 15%;
     }
 }

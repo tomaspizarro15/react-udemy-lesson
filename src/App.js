@@ -122,9 +122,8 @@ class Componente1 extends Component {
           <main style={{ marginTop: '0%' }}>
           </main> 
           <MainComponents/>
-          <LowComponent/>
+          
         </div>
-        
       </StyleRoot>
     )
   }

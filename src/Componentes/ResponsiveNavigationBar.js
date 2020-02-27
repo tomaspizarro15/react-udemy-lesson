@@ -27,24 +27,31 @@ class NavBar extends Component {
 
         return (
             <div className="nav_bar">
-                <div className="nav_bar_button"><DrawerToggleButton /></div>
+                <div className="nav_bar_button">
+                    <DrawerToggleButton
+                        click={this.showSideDrawerHandler}
+                    />
+                </div>
                 <div className="nav_bar_title">
                     <li>React</li>
                 </div>
-                <div className="spacer"></div>
+                <div className="spacer_1"></div>
                 <div className="nav_bar_input">
-                    <input type="text"></input>
+                    <input type="text" placeholder ="Search..."></input>
                 </div>
-
-                <div className="nav_bar_li">
-
+                <div className="spacer_2"></div>
+                <div className="nav_bar_list">
                     <ul>
-                        <li href="#">Products</li>
-                        <li href="#">Settings</li>
-                        <li href="#">Community</li>
+                        <li><a href ="$">Products</a></li>
+                        <li><a href ="$">Products</a></li>
+                        <li><a href ="$">Products</a></li>               
                     </ul>
 
                 </div>
+                <SideDrawer
+                    click={this.showSideDrawerHandler}
+                    showSideDrawer={this.state.showSideDrawer}
+                />
             </div>
         );
     }
