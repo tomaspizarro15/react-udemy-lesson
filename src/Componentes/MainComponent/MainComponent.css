@@ -213,3 +213,7 @@
 @media (max-width :768px) {
 
 }
+
+.low_component {
+    background-color: #1b1b1b;
+}

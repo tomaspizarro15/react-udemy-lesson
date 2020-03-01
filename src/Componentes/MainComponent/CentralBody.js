@@ -82,9 +82,7 @@ const CentralBody = (props) => {
                 </ul>
 
             </div>
-            <div>
-                <LowComponent />
-            </div>
+            <LowComponent/>
         </div>
     );
 }

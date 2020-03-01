@@ -6,16 +6,15 @@ class LowComponent extends Component {
 
     state = {
 
-        lowComponentPartitions: [
-            { title: "title0", info: 'info0' },
-            { title: "title1", info: 'info1' },
-            { title: "title2", info: 'info2' },
-            { title: "title3", info: 'info3' },
-
+        Tarjetas: [
+            { title: "Angular", content: "Angular JS Website developing curse", free: "Free curse", premium: "Private curse" },
+            { title: "React", content: "React JS Website developing curse", free: "Free curse", premium: "Private curse" },
+            { title: "PHP", content: "Backend developing curse", free: "Free curse", premium: "Private curse" },
         ],
 
         showTarjetas: 0,
     }
+
 
 
     sumarTarjetasHandler = () => {
@@ -41,38 +40,27 @@ class LowComponent extends Component {
 
     render() {
 
-        if (this.state.showTarjetas === 1) {
 
-            alert('se mostrara el primer componente')
-
-
-        } else if (this.state.showTarjetas === 2) {
-
-            alert('se mostrara el segundo componente')
-
-        } else if (this.state.showTarjetas === 3) {
-            alert('se mostrara el tercer componente')
-        }
         return (
 
-
             <div className="low_component">
-               
-                <div className = "low_component_tarjetas">
-                    <ul>
-                        <li>
-                            <h1>title</h1>
-                            <p>Content</p>
-                        </li>
-                        <li>
-                            <h1>title</h1>
-                            <p>Content</p>
-                        </li>
-                        <li>
-                            <h1>title</h1>
-                            <p>Content</p>
-                        </li>
-                    </ul>
+
+                <div className="low_component_tarjetas">
+                   <ul>
+                       <div className ="tarjetas">
+                           <h1>Title</h1>
+                           <p>content</p>
+                       </div>
+                       <div className ="tarjetas">
+                           <h1>Title</h1>
+                           <p>content</p>
+                       </div>
+                       <div className ="tarjetas">
+                           <h1>Title</h1>
+                           <p>content</p>
+                       </div>     
+                       
+                   </ul>
                 </div>
 
             </div>
@@ -82,4 +70,4 @@ class LowComponent extends Component {
 
 }
 
-export default LowComponent;
+export default LowComponent;                      
