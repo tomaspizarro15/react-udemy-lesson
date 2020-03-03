@@ -8,9 +8,7 @@
     z-index: 200;
     background-color: #aaaaaa;
     cursor: alias;
-    font-family: 'Roboto', sans-serif;
-    transform: translateY(-5.5rem);
-    
+    font-family: 'Roboto', sans-serif;  
     cursor: default;
 }
 
@@ -28,31 +26,40 @@
 }
 
 .main_central h1 {
-    transform: translateY(12rem);
+    transform: translateY(10rem);
     height: 5vw;
 }
 .main_central button {
-    height: 3vw;
+    height: 4vw;
     margin-left: 1vw;
-    width: 10rem;
-    border-radius: 16px;
+    width: 15vw;
+    border-radius: 6px;
     background-color: #1b1b1b;
     border: hidden;
     color: white;
     cursor: pointer;
-    font-size: 2vw;
-    transform: translateY(13.5rem);
+    font-size: 5vmin;
+    transform: translateY(11.2rem);
+    transition: box-shadow 200ms linear;
+    transition: background-color 250ms linear;  
 }
-
+.main_central button:hover {
+    color: rgb(0, 0, 0);
+    transition: color 350ms linear;
+    box-shadow: 2px 2px 20px 2px rgb(0, 0, 0);
+    transition: box-shadow 300ms linear;
+    background-color: white;
+    transition: background-color 250ms linear;
+}
 .main_uno {
     position: relative;
     z-index: 300;
     transition: transform 500ms ease-in;
-    transform: translateY(0);
+    transform: translateY(-5.5rem);
 }
 .main_uno.close {
     transition: transform 500ms ease-in;
-    transform: translateY(-88%);
+    transform: translateY(-20.5rem);
 }
 .main_uno_descarga {
     z-index: 200;
@@ -83,11 +90,11 @@
 .main_uno_arrow i {
     border: solid rgba(253, 207, 0, 1);
     border-width:  2px 0 0 2px ;
-    margin-bottom: 0.5vw;
-    margin-top: 0.2vw;
-    height: 0.5rem;
-    width: 0.5rem;
-    transform: rotate(45deg);
+    margin-bottom: 0.6vw;
+    margin-top: 0vw;
+    height: 0.4rem;
+    width: 0.4rem;
+    transform: rotate(225deg);
     background-color:transparent;  
 }
 .main_uno_arrow i:hover {
@@ -213,7 +220,9 @@
 @media (max-width :768px) {
 
 }
-
-.low_component {
-    background-color: #1b1b1b;
+.low_component_fixer {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    transform: ;
 }

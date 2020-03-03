@@ -1,26 +1,34 @@
 import React, { Component } from 'react';
 import CentralBody from './CentralBody';
 import "./MainComponent.css";
+import LowComponent from '../LowComponent/LowComponent';
 
 class MainComponents extends Component {
 
     state = {
-        showDescarga : true,
+
+        tarjetas: [
+            { title: "Angular", content: "Angular JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
+            { title: "React", content: "React JSX front-end webside developing course", buttonFree: "Free course", buttonPay: "Paid course" },
+            { title: "Vue.js", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
+        ],
+
+        showDescarga: true,
         showArrow: false,
-        showBackDrop : false,
+        showBackDrop: false,
         showLogIn: false,
-        showSideDrawer : true,
+        showSideDrawer: true,
     }
 
-    showBackDropHandler =() => {
-        this.setState({showArrow : true})
+    showBackDropHandler = () => {
+        this.setState({ showArrow: true })
     }
 
     showSideDrawerHandler = () => {
 
         const newShowSideDrawer = this.state.showSideDrawer;
 
-        this.setState({showSideDrawer : !newShowSideDrawer})
+        this.setState({ showSideDrawer: !newShowSideDrawer })
 
     }
     showArrowHandler = () => {
@@ -33,7 +41,7 @@ class MainComponents extends Component {
 
     redirectGitHubHandler = () => {
 
-        window.open("https://github.com/tomaspizarro15/react-udemy-lesson");
+        window.open("https://github.com/tomaspizarro15");
 
     }
     redirectReactHandler = () => {
@@ -50,26 +58,37 @@ class MainComponents extends Component {
 
         const newShowDescarga = this.state.showDescarga;
 
-        this.setState({showDescarga : !newShowDescarga})
+        this.setState({ showDescarga: !newShowDescarga })
 
     }
     render() {
 
-     
+
 
         return (
 
-            <div style ={{height : '100%'}}>
-             
-                <CentralBody
-                    clickArrow = {this.showDescargaHandler}
-                    showDescarga = {this.state.showDescarga}
-                    redirectGH = {this.redirectGitHubHandler}
-                    redirectReact = {this.redirectReactHandler}
-                    redirectMendoza = {this.redirectMendozaHandler}
-                />
-                <div className ="low_component">
-                
+            <div style={{ height: '100%' }}>
+
+
+                <div className="fixer">
+
+                    <CentralBody
+                        clickArrow={this.showDescargaHandler}
+                        showDescarga={this.state.showDescarga}
+                        redirectGH={this.redirectGitHubHandler}
+                        redirectReact={this.redirectReactHandler}
+                        redirectMendoza={this.redirectMendozaHandler}
+                    />
+
+                    <div className ="low_component">
+                    {this.state.tarjetas.map(tarjeta => {
+                        return (
+                           <LowComponent title={tarjeta.title} content={tarjeta.content} buttonFree={tarjeta.buttonFree} buttonPay={tarjeta.buttonPay} />
+                        );
+                    })}
+                    </div>
+                        
+
                 </div>
             </div>
         )

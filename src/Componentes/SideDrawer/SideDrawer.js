@@ -13,28 +13,35 @@ const SideDrawer = (props) => {
 
     return (
         <div className={sideDrawerClasses}>
-            <ul>
-                <div className="side_drawer_div">
+            <ul className ="side_drawer_ul">
 
-                    <div>
-                        <li className="side_drawer_close"><a onClick={props.click}>Close</a></li>
-                    </div>
-                    <div className ="side_drawer_tarjetas">
-                        <li><a href="$">Products</a></li>
-                        <li><a href="$">Products</a></li>
-                        <li><a href="$">Products</a></li>
-                        <li><a href="$">Products</a></li>
-                        <li><a href="$">Products</a></li>
-                        <li><a href="$">Products</a></li>
-                        <li><a href="$">Products</a></li>
-                        <li><a href="$">Products</a></li>
-                        <li><a href="$">Products</a></li>
-                        <li><a href="$">Products</a></li>
-                        <li><a href="$">Products</a></li>
-                        <li><a href="$">Products</a></li>
-                        <li><a href="$">Products</a></li>
-                        <li><a href="$">Products</a></li>
-                    </div>
+
+                <div>
+                    <li className="side_drawer_close" onClick={props.click}><a>Close</a></li>
+                </div>
+                <div className="side_drawer_tarjetas">
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
+                    <li><a href="$">Products</a></li>
                 </div>
 
 

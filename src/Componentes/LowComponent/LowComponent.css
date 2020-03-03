@@ -1,36 +1,16 @@
 .low_component {
-    position: relative;
-    z-index: 300;
-    width: 100%;
-    background-color: rgb(168, 135, 0);
-    margin: 0;
-    padding: 0;
-}
-
-.low_component_tarjetas {
-   background-color: #1b1b1b;
-}
-.low_component_tarjetas ul {
     display: flex;
-    padding: 0;
-    margin-bottom: 1vw;
-    background-color: #2b2b2b;
-    width: 100%;
+    position: relative;
     flex-direction: row;
-   
-  
-}
-
-.tarjetas {
-    border: 0.5px solid rgb(253, 207, 0);
-    margin: 1vw 0.35% 1vw 0.35%;
-    background-color: #1b1b1b;
-    box-shadow: 2px 2px 10px 2px black;
-    font-size: 2vw;
+    align-items: center;
     text-align: center;
+    z-index: 200;
     width: 100%;
-    height: 16vw;
-    justify-content: center;
-    border-radius: 4px;
-    color: white;
+    background-color: rgba(253, 207, 0);
+    margin: 0;
+    transform: translateY(0);
+    padding: 0;
+}
+.low_component_tarjetas {
+    width: 100%;
 }

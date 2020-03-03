@@ -33,7 +33,7 @@ class NavBar extends Component {
                     />
                 </div>
                 <div className="nav_bar_title">
-                    <li>React</li>
+                    <li><h1>ProgramMe</h1></li>
                 </div>
                 <div className="spacer_1"></div>
                 <div className="nav_bar_input">
@@ -42,13 +42,14 @@ class NavBar extends Component {
                 <div className="spacer_2"></div>
                 <div className="nav_bar_list">
                     <ul>
-                        <li><a href ="$">Products</a></li>
-                        <li><a href ="$">Products</a></li>
-                        <li><a href ="$">Products</a></li>               
+                        <li><a href ="$">About us</a></li>
+                        <li><a href ="$">Front-end curses</a></li>
+                        <li><a href ="$">Back-end curses</a></li>               
                     </ul>
 
                 </div>
                 <SideDrawer
+                    
                     click={this.showSideDrawerHandler}
                     showSideDrawer={this.state.showSideDrawer}
                 />
