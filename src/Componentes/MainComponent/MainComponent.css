@@ -14,6 +14,7 @@
 
 .main_central {
     top: 0;
+    z-index: 500;
     background-color: rgba(253, 207, 0, 0.7);
     width: 100%;
     height: 23.5rem;
@@ -38,10 +39,11 @@
     border: hidden;
     color: white;
     cursor: pointer;
-    font-size: 5vmin;
+    font-size: 3vw;
     transform: translateY(11.2rem);
     transition: box-shadow 200ms linear;
     transition: background-color 250ms linear;  
+
 }
 .main_central button:hover {
     color: rgb(0, 0, 0);
@@ -53,16 +55,17 @@
 }
 .main_uno {
     position: relative;
-    z-index: 300;
+    z-index: 600;
     transition: transform 500ms ease-in;
     transform: translateY(-5.5rem);
 }
 .main_uno.close {
+    z-index: 600;
     transition: transform 500ms ease-in;
     transform: translateY(-20.5rem);
 }
 .main_uno_descarga {
-    z-index: 200;
+    z-index: 600;
     width: 100%;
     height: 16rem;
     background-color: #1b1b1b;
@@ -78,9 +81,9 @@
 }
 
 .main_uno_arrow {
-    z-index: 200;
     margin-top: -0.1%;
     padding: 0;
+    z-index: ;
     background-color: #1b1b1b;
     display: flex;
     flex-direction: row;
@@ -164,6 +167,7 @@
     box-shadow: 2px 2px 20px 2px black;
 }
 
+
 .main_dos ul {
     height: 95%;
     margin:0;
@@ -179,10 +183,17 @@
     border-radius: 2px;
     text-align: center;
     height: auto;
-    background-color: transparent;
     box-shadow: 2px 1px 16px 0.5px ;
     margin: 0.5% 0.5% 0% 0.5%;
     padding: 2% 2% 0% 2%;
+    transition: box-shadow 400ms linear;
+    transition: background-color 400ms linear;
+}
+.main_dos li:hover {
+    background-color: #3b3b3b;
+    box-shadow: 1px 5px 44px 5px;
+    transition: box-shadow 400ms linear;
+    transition: background-color 400ms linear;
 }
 .main_dos h1 {
     color: rgb(253, 207, 0);
@@ -211,7 +222,7 @@
 .button_more:hover {
     border-color:rgb(253, 207, 0);
     box-shadow: 1px 1px 10px 1px rgba(0, 0, 0 , 1);
-    background-color: rgb(253, 207, 0);
+    background-color: rgb(255, 208, 0);
     cursor: pointer;
     color: black;
     transition: color 700ms;
@@ -220,9 +231,24 @@
 @media (max-width :768px) {
 
 }
+
 .low_component_fixer {
     display: flex;
     position: relative;
     flex-direction: row;
-    transform: ;
+}
+
+.featured_component {
+    width: 100%;
+    z-index: 200;
+    position: relative;
+    text-align: center;
+    background-color: #2b2b2b;
+    color: white;
+    font-family: 'Roboto',sans-serif;
+}
+.featured_component h1{
+    font-size: 1.5vw;
+    margin: 0.6vw 0 0.6vw 0;
+    padding: 0.3vw 0 0.3vw 0;
 }

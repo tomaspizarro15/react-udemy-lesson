@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import CentralBody from './CentralBody';
 import "./MainComponent.css";
-import LowComponent from '../LowComponent/LowComponent';
 
 class MainComponents extends Component {
 
@@ -13,11 +12,22 @@ class MainComponents extends Component {
             { title: "Vue.js", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
         ],
 
+
         showDescarga: true,
         showArrow: false,
         showBackDrop: false,
         showLogIn: false,
         showSideDrawer: true,
+    }
+
+    sdState = {
+
+        sdContent: [
+            { title: "Settings", content: "My Account", content_1: "My Courses", content_2: "My Projects", content_3: "Log out" },
+            { title: "Store", content: "Curses", content_1: "Masterclasses", content_2: "Products", content_3: "Offerts" },
+            { title: "Community", content: "Forum  Q&A", content_1: "Community Projects", content_2: "Community Courses", content_3: false },
+        ],
+
     }
 
     showBackDropHandler = () => {
@@ -55,21 +65,16 @@ class MainComponents extends Component {
     }
 
     showDescargaHandler = () => {
-
         const newShowDescarga = this.state.showDescarga;
 
         this.setState({ showDescarga: !newShowDescarga })
-
     }
     render() {
-
-
-
         return (
 
             <div style={{ height: '100%' }}>
 
-
+                
                 <div className="fixer">
 
                     <CentralBody
@@ -79,15 +84,17 @@ class MainComponents extends Component {
                         redirectReact={this.redirectReactHandler}
                         redirectMendoza={this.redirectMendozaHandler}
                     />
-
-                    <div className ="low_component">
-                    {this.state.tarjetas.map(tarjeta => {
-                        return (
-                           <LowComponent title={tarjeta.title} content={tarjeta.content} buttonFree={tarjeta.buttonFree} buttonPay={tarjeta.buttonPay} />
-                        );
-                    })}
+                    <div className="featured_component">
+                        <h1>Featured Curses</h1>
                     </div>
-                        
+                    <div className="low_component">
+                        {this.state.tarjetas.map((tarjeta, i) => {
+                            return (
+                                <LowComponent key={i} title={tarjeta.title} content={tarjeta.content} buttonFree={tarjeta.buttonFree} buttonPay={tarjeta.buttonPay} />
+                            );
+                        })}
+                    </div>
+
 
                 </div>
             </div>

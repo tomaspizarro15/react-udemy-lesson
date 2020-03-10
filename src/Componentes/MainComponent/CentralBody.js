@@ -1,6 +1,5 @@
 import React from 'react';
 import "./MainComponent.css";
-import LowComponent from '../LowComponent/LowComponent';
 
 const CentralBody = (props) => {
 
@@ -42,7 +41,7 @@ const CentralBody = (props) => {
 
             </div>
             <div className="main_central">
-                <h1>Let's Begin</h1>
+                <h1>Let's Begin the teaching</h1>
                 
                    <div className ="main_central_button">
                        <button>Start now</button>

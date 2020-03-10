@@ -5,7 +5,7 @@ import Backdrop from './Componentes/Backdrop/Backdrop';
 import Radium, { StyleRoot } from 'radium';
 import './App.css';
 import MainComponents from './Componentes/MainComponent/MainComponent';
-import LowComponent from './Componentes/LowComponent/LowComponent';
+import MobileDownload from './Componentes/MobileDownloadComponent/MobileDownload';
 
 
 class Componente1 extends Component {
@@ -86,20 +86,6 @@ class Componente1 extends Component {
     )
   }
 
-  findIndexPersonHandler = (event, id) => {
-
-    const EncontrandoElID = this.state.persons.findIndex(person => {
-
-      return person.id === id;
-    }
-    )
-
-    const IDPersona = { 
-      ...this.state.persons[EncontrandoElID]
-    }
-
-  }
-
   ocultarSideDrawerHandler = () => {
 
     const newShowSideDrawer = this.state.showSideDrawer;
@@ -107,12 +93,6 @@ class Componente1 extends Component {
     this.setState({ showSideDrawer: !newShowSideDrawer })
   }
   render() {
-
-    const rnd = Math.random();
-
-    if (rnd < 0.0001) {
-
-    }
 
     return (
       <StyleRoot>
@@ -122,7 +102,7 @@ class Componente1 extends Component {
           <main style={{ marginTop: '0%' }}>
           </main> 
           <MainComponents/>
-          
+          <MobileDownload/>
         </div>
       </StyleRoot>
     )

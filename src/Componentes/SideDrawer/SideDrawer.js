@@ -1,53 +1,56 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './SideDrawer.css';
-import DrawerToggleButton from './DrawerToggleButton';
-const SideDrawer = (props) => {
+class SideDrawer extends Component {
 
-    let sideDrawerClasses = 'side_drawer';
+    state = {
+        sideDrawerList: [
+            { title: "Store", first_content: "Curses", second_content: "Masterclasses", third_content: "Products", fourth_content: "Documentation" },
+            { title: "Settings", first_content: "My account", second_content: "My buys", third_content: "My proyects", fourth_content: "Log in" },
+            { title: "Community", first_content: "Forums", second_content: "Community content", third_content: "Community Users", fourth_content: "Stack overflow" },
+        ],
 
-    if (props.showSideDrawer) {
-
-        sideDrawerClasses = 'side_drawer open';
+        sideDrawerClasses : 'side_drawer_container'
 
     }
+    render(propiedades) {
 
-    return (
-        <div className={sideDrawerClasses}>
-            <ul className ="side_drawer_ul">
+        let showSideDrawerHandler = () => {
 
 
-                <div>
-                    <li className="side_drawer_close" onClick={props.click}><a>Close</a></li>
+
+        }
+
+        return (
+            <div className={this.state.sideDrawerClasses}>
+                <div className="side_drawer">
+                    <div className="side_drawer_list">
+                        <div className="side_drawer_button_container">
+                            <button onClick={showSideDrawerHandler}></button>
+                           
+                        </div>
+
+                        {this.state.sideDrawer.list.map(list => {
+                            return (
+                                <div className="side_drawer">
+                                    <ul>
+                                        <div className="side_drawer_title">
+                                            <li className="sd_title"><p>{list.title}</p></li>
+                                            <li className="sd_content"><a href="$">{list.first_content}</a></li>
+                                            <li className="sd_content"><a href="$">{list.second_content}</a></li>
+                                            <li className="sd_content"><a href="$">{list.third_content}</a></li>
+                                            <li className="sd_content"><a href="$">{list.fourth_content}</a></li>
+                                        </div>
+                                        <div className="side_drawer_content"></div>
+                                    </ul>
+                                </div>
+                            );
+                        })}
+                    </div>
                 </div>
-                <div className="side_drawer_tarjetas">
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                    <li><a href="$">Products</a></li>
-                </div>
+            </div >
+        )
 
-
-            </ul>
-        </div>
-    )
+    }
 
 }
 
