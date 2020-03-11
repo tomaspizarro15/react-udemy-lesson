@@ -1,58 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './SideDrawer.css';
-class SideDrawer extends Component {
+const sideDrawer = (props) => {
 
-    state = {
-        sideDrawerList: [
-            { title: "Store", first_content: "Curses", second_content: "Masterclasses", third_content: "Products", fourth_content: "Documentation" },
-            { title: "Settings", first_content: "My account", second_content: "My buys", third_content: "My proyects", fourth_content: "Log in" },
-            { title: "Community", first_content: "Forums", second_content: "Community content", third_content: "Community Users", fourth_content: "Stack overflow" },
-        ],
-
-        sideDrawerClasses : 'side_drawer_container'
-
-    }
-    render(propiedades) {
-
-        let showSideDrawerHandler = () => {
+    return (
 
 
+        <ul className="sidedrawer_list">
 
-        }
+            <div className="sidedrawer_title">
+                <li ><h1>{props.title}</h1></li>
+            </div>
+            <div className="sidedrawer_content">
+                <li><a href="/">{props.content1}</a></li>
+                <li><a href="/">{props.content2}</a></li>
+                <li><a href="/">{props.content3}</a></li>
+                <li><a href="/">{props.content4}</a></li>
+            </div>
 
-        return (
-            <div className={this.state.sideDrawerClasses}>
-                <div className="side_drawer">
-                    <div className="side_drawer_list">
-                        <div className="side_drawer_button_container">
-                            <button onClick={showSideDrawerHandler}></button>
-                           
-                        </div>
+        </ul >
 
-                        {this.state.sideDrawer.list.map(list => {
-                            return (
-                                <div className="side_drawer">
-                                    <ul>
-                                        <div className="side_drawer_title">
-                                            <li className="sd_title"><p>{list.title}</p></li>
-                                            <li className="sd_content"><a href="$">{list.first_content}</a></li>
-                                            <li className="sd_content"><a href="$">{list.second_content}</a></li>
-                                            <li className="sd_content"><a href="$">{list.third_content}</a></li>
-                                            <li className="sd_content"><a href="$">{list.fourth_content}</a></li>
-                                        </div>
-                                        <div className="side_drawer_content"></div>
-                                    </ul>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-            </div >
-        )
 
-    }
+
+    );
+
 
 }
 
-
-export default SideDrawer;
+export default sideDrawer; 

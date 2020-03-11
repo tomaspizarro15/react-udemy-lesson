@@ -1,41 +1,65 @@
 import React, { Component } from 'react';
 import "./ResponsiveNavigationBar.css"
+import "./SideDrawer/SideDrawer.css"
 import DrawerToggleButton from './SideDrawer/DrawerToggleButton';
 import SideDrawer from './SideDrawer/SideDrawer';
-
-
-
-
-
 class NavBar extends Component {
 
+
     state = {
-        showSideDrawer: false,
-        showArrow: false,
-        sdContent: [
-          
-            {  id : "01" ,nombre: "Store", cUno: "Documentation", cDos: "Curses", cTres: "Live Lessons", cCuatro: "Products" },
-            {  id : "02" ,nombre: "Settings", cUno: "My Account", cDos: "My Curses", cTres: "My Stats", cCuatro: "Log out" },
-            {  id : "03" ,nombre: "Settings", cUno: "My Account", cDos: "My Curses", cTres: "My Stats", cCuatro: "Log out" },
-        ]
 
+        sideDrawerComponents: [
+            { title: "Account", content1: "Settings", content2: "My Curses", content3: "My Projects", content4: "Log out" },
+            { title: "Shop", content1: "Live Lessons", content2: "Curses", content3: "Products/Merch", content4: "Documents & Papers" },
+            { title: "Community", content1: "QA Forum", content2: "Community Courses", content3: "Community Documentation", content4: "Community Projects" },
+            { title: "About", content1: "About us", content2: "About React", content3: "Git hub", content4: "Social media" },
+            { title: "Code Editors", content1: "Visual Studio Code", content2: "Atom", content3: "Sublime Text", content4: "Net beans" },
+            
+        ],
+
+        sideDrawerStatus: false,
     }
-
     showSideDrawerHandler = () => {
 
-        const newShowSideDrawer = this.state.showSideDrawer;
+        let newSideDrawerStatus = this.state.sideDrawerStatus;
 
-        this.setState({ showSideDrawer: !newShowSideDrawer })
+        this.setState({ sideDrawerStatus: !newSideDrawerStatus })
+
     }
 
     render() {
+
+        let sideDrawerClasses = 'sidedrawer'
+
+        if (this.state.sideDrawerStatus) {  
+            sideDrawerClasses = 'sidedrawer open'
+        }
 
 
         return (
             <div className="nav_bar">
                 <div className="nav_bar_button">
-                    <DrawerToggleButton/>
-                    <SideDrawer/>
+                    <DrawerToggleButton
+                        click={this.showSideDrawerHandler}
+                    />
+
+                    <div className={sideDrawerClasses}>
+                        <div className="sidedrawer_button"><button onClick={this.showSideDrawerHandler}>Close</button></div>
+                        {this.state.sideDrawerComponents.map((props, i) => {
+                            return (
+                                <SideDrawer
+                                    key = {i}
+                                    show={this.state.SideDrawerStatus}
+                                    title={props.title}
+                                    content1={props.content1}
+                                    content2={props.content2}
+                                    content3={props.content3}
+                                    content4={props.content4}>
+                                </SideDrawer>
+                            );
+                        })}
+                    </div>
+
                 </div>
                 <div className="nav_bar_title">
                     <li><h1>ProgramMe</h1></li>
@@ -58,7 +82,6 @@ class NavBar extends Component {
             </div>
         );
     }
-
 }
 
 

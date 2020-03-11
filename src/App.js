@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component} from 'react';
 ////////////////////////////////////////////////////
 import NavBar from './Componentes/ResponsiveNavigationBar';
 import Backdrop from './Componentes/Backdrop/Backdrop';
@@ -9,6 +9,11 @@ import MobileDownload from './Componentes/MobileDownloadComponent/MobileDownload
 
 
 class Componente1 extends Component {
+
+  constructor(props) {
+    super(props);
+    console.log('[App.js] constructor') 
+  }
 
   state = {
     bienvenido: [{ name: "Timothy" }],
@@ -24,7 +29,15 @@ class Componente1 extends Component {
     showDatosDelUsuario: true,
   }
 
+  static getDerivedStateFromProps(props , state) {
 
+    console.log("[App.js] getDerivedStateFromProps")
+
+  }
+
+  componentDidMount() {
+    console.log("[App.js] componentDidMount");
+  }
 
   mostrarObjetoHandler = () => {
 

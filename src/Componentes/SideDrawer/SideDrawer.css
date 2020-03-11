@@ -1,77 +1,105 @@
-.side_drawer_container{
+.sidedrawer{
     position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
-    z-index: 700;
-    width: 20rem;
+    background-color: white;
+    width: 14.5rem;
     height: 100%;
-    background-color: rgb(255, 255, 255);
+    z-index: 700;
+    transform: translateX(-15rem);
+    transition: transform 250ms ease-out;
     overflow-y: scroll;
-    left: 0;
-    top :0;
+    overflow-x: hidden;
+    border-radius: 2px;
 }
-.side_drawer_container.close {
-    transform: translateY(-100);
-    transition: transform 200ms ease-in-out;
+@media(max-width : 768px) {
+
+    .sidedrawer {
+        height: 35rem;
+    }
+
 }
-.side_drawer_button_container {
-    display: flex;
-    transform: translateY(0%);
-    flex-direction: row;
-    height: 1.8vw;
-    padding: 0.25vw 0 0.25vw 0;
-    background-color: rgb(0, 0, 0)
+.sidedrawer.open {
+    transform: translateX(0rem);
+    transition: transform 400ms ease-in;
 }
-.side_drawer_button_container button {
+
+.sidedrawer_button {
+    padding: 0.1vw;
+    background-color: black;
+}
+.sidedrawer_button button {
+    border: 0;
     background-color: transparent;
-    font-size: 1.5vw;
     color: white;
-    border: 0px;
+    font-size: 2vw;
 }
-.side_drawer {
-    width: 100%;
-}
-.side_drawer ul{
-    
-    padding: 0;
-    margin: 0 0 0 0;
-
-}
-.side_drawer li {
-    list-style: none;
-}
-.sd_content  {
-    background-color: transparent;
-    border-radius: 16px;
-    margin: 0.5vw 0 0.5vw 0 ;
-    padding: 0.5vw 0 0.5vw 0;
-    list-style: none;
-    transition: background-color 350ms linear;
-}
-
-.sd_content a {
-    color: black;
-    text-decoration: none;
-    margin-left: 1vw;
-    transition: margin-left 200ms linear;
-}
-.sd_content:hover {
-    transition: background-color 350ms linear;
-    background-color: #9b9b9b;
+.sidedrawer_button button:hover {
+    color: rgb(253,207,0);
     cursor: pointer;
 }
-.sd_content:hover a{
-    color: rgb(253 , 207, 0);
-    transition: color 200ms linear;
-    margin-left: 2vw;
-    transition: margin-left 200ms linear;
+.sidedrawer::-webkit-scrollbar {
+    width: 0.5vw;
+}
+.sidedrawer::-webkit-scrollbar-track {
+    background-color: black;
+}
+.sidedrawer::-webkit-scrollbar-thumb{
+    height: 20vw;
+    border-radius: 16px;
+    background-color: rgb(253,207,0);
+}
 
+.sidedrawer_list {
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
 }
-.sd_title {
-    padding: 0.5vw 0 0.5vw 0;
-    background-color: rgb(253 , 207, 0);
+.sidedrawer_title {
+    background-color: black;
+    height: 2.8vw;
 }
-.sd_title p {
-    margin:0;
+.sidedrawer_title li {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(253,207,0);
+}
+
+.sidedrawer_content li {
+    background-color: white;
+    list-style: none;
+    height: auto;
+    margin: 0.4vw 0 0.4vw 0;
+    padding: 0.4vw 0 0.4vw 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    transition: background-color 450ms linear;
+}
+
+.sidedrawer_content li:hover{
+    background-color: #6b6b6b;
+    transition: background-color 450ms linear;
+    
+}
+.sidedrawer_content li:hover a {
+    margin-left: 2.5vw;
+    color: rgb(253,207,0);
+    text-decoration: underline;
+    transition: margin-left 300ms linear;
+}
+.sidedrawer a {
     color: black;
+    text-decoration: none;
+    margin: 0 0 0 0.5vw;
+    width: 90%;
+    transition: margin-left 300ms linear;
+}
+.sidedrawer h1 {
+    margin: 0 0 0 0.5vw;
+    color: black;
+    padding: 0.3vw 0 0.3vw 0;
+    font-size: 1.5vw;
 }

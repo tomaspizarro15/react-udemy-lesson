@@ -166,10 +166,12 @@
     background-color: #2b2b2b;
     box-shadow: 2px 2px 20px 2px black;
 }
-
+.main_dos_container {
+    height: 100%;
+}
 
 .main_dos ul {
-    height: 95%;
+    height: 100%;
     margin:0;
     padding: 0;
     display: flex;
@@ -238,17 +240,3 @@
     flex-direction: row;
 }
 
-.featured_component {
-    width: 100%;
-    z-index: 200;
-    position: relative;
-    text-align: center;
-    background-color: #2b2b2b;
-    color: white;
-    font-family: 'Roboto',sans-serif;
-}
-.featured_component h1{
-    font-size: 1.5vw;
-    margin: 0.6vw 0 0.6vw 0;
-    padding: 0.3vw 0 0.3vw 0;
-}
