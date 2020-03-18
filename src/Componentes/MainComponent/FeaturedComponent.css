@@ -1,0 +1,9 @@
+.featured_component {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    z-index: 300;
+    background-color: #1b1b1b;
+    height: 20vw;
+    width: 100%;
+}

@@ -29,15 +29,6 @@ class Componente1 extends Component {
     showDatosDelUsuario: true,
   }
 
-  static getDerivedStateFromProps(props , state) {
-
-    console.log("[App.js] getDerivedStateFromProps")
-
-  }
-
-  componentDidMount() {
-    console.log("[App.js] componentDidMount");
-  }
 
   mostrarObjetoHandler = () => {
 

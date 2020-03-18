@@ -169,7 +169,6 @@
 .main_dos_container {
     height: 100%;
 }
-
 .main_dos ul {
     height: 100%;
     margin:0;
@@ -178,7 +177,6 @@
     flex-direction: row;
     justify-content: center;
 }
-
 .main_dos li {
     position: relative;
     list-style: none;
@@ -234,9 +232,31 @@
 
 }
 
-.low_component_fixer {
-    display: flex;
+.arrow_container {
     position: relative;
-    flex-direction: row;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    z-index: 500;
 }
-
+.arrow_container i {
+    border: solid rgb(255, 255, 255);
+    border-width: 0 2px 2px 0;                                                                                                                              
+    display: inline-block;
+    padding: 8px;
+  }       
+  
+  .arrow_container p {
+      padding: 5vw 0 0 0;
+  }
+  
+  .right {
+    margin-left: 0.5vw;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+  
+  .left {
+    margin-right: 0.5vw;
+    transform: rotate(-45deg);      
+    -webkit-transform: rotate(-45deg);
+  }

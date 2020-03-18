@@ -3,16 +3,19 @@ import "./MainComponent.css";
 
 const CentralBody = (props) => {
 
-    let mainUnoClasses = 'main_uno';
+
+
+
+    let mainUnoClasses = 'main_uno'
 
 
     if (props.showDescarga === true) {
-        mainUnoClasses = 'main_uno close';
+        mainUnoClasses = 'main_uno close'
     }
 
     return (
 
-
+                                                                                                                        
 
         <div className="main_component">
 
@@ -47,12 +50,13 @@ const CentralBody = (props) => {
                     <button>Start now</button>
                 </div>
 
-            </div>
+            </div> 
             <div className="main_dos">
                 <div className="main_dos_container">
                     <ul>
                         <li>
                             <h1>About React</h1>
+                           
                             <p>
                                 React makes it painless to create interact
                                 ve UIs. Design simple views for each state in your application,
