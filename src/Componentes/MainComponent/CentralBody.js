@@ -55,8 +55,7 @@ const CentralBody = (props) => {
                 <div className="main_dos_container">
                     <ul>
                         <li>
-                            <h1>About React</h1>
-                           
+                            <h1>About React</h1>                          
                             <p>
                                 React makes it painless to create interact
                                 ve UIs. Design simple views for each state in your application,

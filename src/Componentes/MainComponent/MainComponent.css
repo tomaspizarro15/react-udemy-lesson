@@ -83,7 +83,7 @@
 .main_uno_arrow {
     margin-top: -0.1%;
     padding: 0;
-    z-index: ;
+    z-index: 500;
     background-color: #1b1b1b;
     display: flex;
     flex-direction: row;
@@ -232,22 +232,44 @@
 
 }
 
-.arrow_container {
-    position: relative;
-    margin-left: 0.5vw;
-    margin-right: 0.5vw;
+.arrow_container_left {
+    position: absolute;
+    top: 50%;
     z-index: 500;
+    width: auto;
+    transform: translate(95vw ,-50%);
 }
-.arrow_container i {
-    border: solid rgb(255, 255, 255);
+.arrow_container_right {
+    margin-left: 1vw;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 500;
+    width: auto ;
+}
+.arrow_container_left i {
+    border: solid rgb(253, 207, 0);
     border-width: 0 2px 2px 0;                                                                                                                              
     display: inline-block;
     padding: 8px;
-  }       
+  }   
+  .arrow_container_right i {
+    border: solid rgb(253, 207, 0);
+    border-width: 0 2px 2px 0;                                                                                                                              
+    display: inline-block;
+    padding: 8px;
+  }     
   
-  .arrow_container p {
-      padding: 5vw 0 0 0;
+  .arrow_container_left p {
+      margin: 0;
+      padding: 0 0 0 0;
+      height: 100%;
   }
+  .arrow_container_right p {
+    padding: 0 0 0 0;
+    margin: 0;
+    height: 100%;
+}
   
   .right {
     margin-left: 0.5vw;
@@ -257,6 +279,26 @@
   
   .left {
     margin-right: 0.5vw;
+    transform: translateX();
     transform: rotate(-45deg);      
     -webkit-transform: rotate(-45deg);
+  }
+
+  .header_low_component {
+      background-color: #2b2b2b;
+      display: inline-flex;
+      width: 100%;
+      z-index: 500;
+      position: relative;
+      margin: 1.5vw 0 0.5vw 0;
+      padding: 0;
+      justify-content: center;
+  }
+
+  .header_low_component p {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto' sans-serif;
+      font-size: 2vw;
+      color: white; 
   }

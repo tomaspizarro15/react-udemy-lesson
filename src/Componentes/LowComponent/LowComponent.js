@@ -5,17 +5,16 @@ import './LowComponent.css'
 const LowComponent = (props) => {
 
 
-
-
     return (
-      
-            <ul className="low_component">
-                <li>
-                    <h1>{props.title}</h1>
-                    <p>{props.content}</p>
-                </li>
-            </ul>
-
+        <li className="low_component">
+            <div style = {{margin : "1vw"}}>
+                <h1>{props.title}</h1>
+                <p>{props.content}</p>
+                <div className="low_button_container">
+                    <button >Saber mas</button>
+                </div>
+            </div>
+        </li>
     )
 }
 

@@ -42,7 +42,6 @@ class NavBar extends Component {
                     <DrawerToggleButton
                         click={this.showSideDrawerHandler}
                     />
-
                     <div className={sideDrawerClasses}>
                         <div className="sidedrawer_button"><button onClick={this.showSideDrawerHandler}>Close</button></div>
                         {this.state.sideDrawerComponents.map((props, i) => {

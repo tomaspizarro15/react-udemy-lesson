@@ -2,30 +2,37 @@ import React, { Component } from 'react';
 import CentralBody from './CentralBody';
 import "./MainComponent.css";
 import LowComponent from '../LowComponent/LowComponent';
+import featuredComponent from './FeaturedComponent';
 
 
 class MainComponents extends Component {
 
     state = {
         tarjetas: [
-            { id: 1, title: "0", content: "Angular JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 2, title: "1", content: "React JSX front-end webside developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 3, title: "2", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 4, title: "3", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 5, title: "4", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 6, title: "5", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 7, title: "6", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 8, title: "7", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 9, title: "8", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 10, title: "9", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 11, title: "10", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-        ], 
-        iterador : 0,  
+            { id: 1, title: "React", content: "Angular JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
+            { id: 2, title: "JSX", content: "React JSX front-end webside developing course", buttonFree: "Free course", buttonPay: "Paid course" },
+            { id: 3, title: "Angular", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
+            { id: 4, title: "Vue", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
+            { id: 5, title: "Python", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
+            { id: 6, title: "Python DJango", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
+            { id: 7, title: "PyGames", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
+            { id: 8, title: "Unreal Engine", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
+            { id: 9, title: "Unity", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
+            { id: 10, title: "JSON", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
+            { id: 11, title: "SQL Databases", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
+            { id: 12, title: "Node Databases", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
+            { id: 13, title: "Git Hub", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
+            { id: 14, title: "Java", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
+            { id: 15, title: "C++", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
+            { id: 16, title: "C#", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
+            
+        ],
+        iterador: 0,
         tarjetasPos: 0,
+        transformValue : 0,
         showDescarga: true,
         showArrow: false,
         showBackDrop: false,
-
         featuredTitle: 'Featured Curses',
     }
 
@@ -48,6 +55,8 @@ class MainComponents extends Component {
 
     }
 
+    //REDIRECTS
+
     redirectGitHubHandler = () => {
 
         window.open("https://github.com/tomaspizarro15");
@@ -59,6 +68,8 @@ class MainComponents extends Component {
 
     }
 
+    //DOWNLOAD COMPONENT
+
     redirectMendozaHandler = () => {
         window.open("http://www.turismo.mendoza.gov.ar/")
     }
@@ -69,33 +80,65 @@ class MainComponents extends Component {
         this.setState({ showDescarga: !newShowDescarga })
     }
 
+    //SLIDER LOGICS AND ITERATORS
 
-    newTarjetas = [...this.state.tarjetas]
+     lengthTarjetas = (this.state.tarjetas.length /3)
+     lengthTarjetas = Math.ceil(this.lengthTarjetas);
 
-   iteradorHandler = () => {
+    iterador = this.state.iterador;
+    contador = 0;
+    
+    slideDecreaserHandler = () => {
+    
+    if (this.state.iterador <= (this.lengthTarjetas) - 1) {
 
-        let iterador = 0; 
-        
-        this.setState({iterador : iterador++})
+            this.setState({ iterador: this.state.iterador + 1 })
+            this.setState({ transformValue : this.state.transformValue - 49.25})
 
-   }
+            console.log("=====>", this.state.iterador)
+            console.log("=====>" , this.state.transformValue)
+            console.log("ARRAY LENGTH ========>" ,this.lengthTarjetas)
+        }else {
+            this.setState({transformValue : 0})
+            this.setState({iterador : 0})
+        }
+
+    }
+    
+    slideIncreaserHandler = () => {
+    
+        if (this.state.iterador > 0) {
+
+            this.setState({ iterador: this.state.iterador -1})
+            this.setState({ transformValue : this.state.transformValue + 49.25})
+           
+            console.log(this.contador)
+            console.log("=====>", this.state.iterador)
+            console.log("=====>" , this.state.transformValue)
+        }else {
+            this.setState({transformValue : -(this.lengthTarjetas * 49.25)})
+            this.setState({iterador : this.lengthTarjetas})
+        }
+    }
+
+    //RENDERING
     render() {
 
+
+
+        let translation =  [ "translateX(" ,this.state.transformValue , "vw)"]; 
+
+
+        translation = translation.join("");
+        translation = translation.trim();
+        translation = translation.toString();
+
+        
         let tarjetas = [...this.state.tarjetas];
 
-        if(this.state.iterador === 0) {
-
-            tarjetas.splice(0,5)
-
-        }else if(this.state.iterador === 1){
-            
-            tarjetas.splice(0,5)
-
-        };
-
-     
-
-        let containerClasses = 'low_component_container'
+        let sliderCurrentPosition = ["low_component_position"] 
+      
+         
         return (
             <div>
                 <div className="fixer">
@@ -106,27 +149,33 @@ class MainComponents extends Component {
                         redirectGH={this.redirectGitHubHandler}
                         redirectReact={this.redirectReactHandler}
                         redirectMendoza={this.redirectMendozaHandler}
+                       
                     />
-                    
-                    <div className={containerClasses}>
+                    <div className ="header_low_component">
+                        <p>Featured Curses</p>
+                    </div>
+                    <div className= "low_component_container">
 
-                        <div className="arrow_container">
-                            <p><i className="arrow right" onClick={this.iteradorHandler}></i></p>
+                        <div className="arrow_container_right">
+                            <p><i className="arrow right" onClick={this.slideIncreaserHandler}></i></p>
                         </div>
                         <div className="low_component_container">
-                            {tarjetas.map((tarjeta, i) => {
-                                return (
+
+                            <ul style = {{transform: translation}} className = {sliderCurrentPosition}>
+                                {tarjetas.map((tarjeta, i) => {
+                                    return (
                                         <LowComponent
-                                    key={tarjeta.id}
-                                     title={tarjeta.title}
-                                    content={tarjeta.content}
-                                    buttonFree={tarjeta.buttonFree}
-                                    buttonPay={tarjeta.buttonPay} />                                
-                               )
-                            })}
+                                            key={tarjeta.id}
+                                            content={tarjeta.content}
+                                            title={tarjeta.title}
+                                            buttonFree={tarjeta.buttonFree}
+                                            buttonPay={tarjeta.buttonPay} />
+                                    )
+                                })}
+                            </ul>
                         </div>
-                        <div className="arrow_container">
-                            <p><i className="arrow left"></i></p>
+                        <div className="arrow_container_left">
+                            <p><i className="arrow left" onClick={this.slideDecreaserHandler}></i></p>
                         </div>
                     </div>
 
