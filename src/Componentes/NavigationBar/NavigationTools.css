@@ -1,0 +1,27 @@
+.navigation_tools {
+    height: 25px;
+    width: 128px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+}
+
+.navigation_tools li {
+    list-style: none;
+    width: 100%;
+    margin:  0  0.5vw 0 0.5vw;
+    padding: 0.25vw 0 0.25vw 0;
+    border-radius: 12px;
+    color: white;
+    font-family: 'Roboto' , sans-serif;
+    background-color:transparent;
+    transition: background-color 300ms linear;
+}
+
+.navigation_tools li:hover {
+    cursor: pointer;
+    background-color: #4b4b4b;
+    color: rgb(253, 207, 0);
+    transition: background-color 300ms linear , color 200ms linear;
+}

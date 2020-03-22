@@ -1,0 +1,88 @@
+
+.download_component {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 600;
+    width: 100%;
+    height: 384px;
+    transform: translateY(-25vw);
+    text-align: center;
+    background-color: #1b1b1b;
+    color: white;
+    box-shadow: black 2px 2px 20px 2px;
+    transition: transform 600ms ease-out;
+    font-family: 'Roboto' ,sans-serif;
+}
+
+
+.download_component.open {
+    transform: translate(0vw);
+    transition: transform 600ms ease-in;
+}
+.download_arrow {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2px;
+    height: 24px;
+    background-color: #1b1b1b;
+    bottom: 0;
+}
+.download_arrow p {
+    margin: 0;
+}
+.arrow_download {
+    margin-top: 8px;
+    justify-self: center;
+    display: inline-block;
+    border: solid rgba(253,207,0);
+    opacity: 0.5;
+    border-width: 0px 4px 4px 0px;
+    padding: 4px;
+    transform: rotate(45deg);
+    transition: border 250ms linear;
+    transition: opacity 250ms linear;
+}
+
+.arrow_download.open {
+    transform: rotate(-135deg);
+}
+.download_arrow i:hover {
+    opacity: 1;
+    border: solid rgba(255,255,255);
+    border-width: 0px 4px 4px 0px;
+    cursor: pointer;
+    transition: border 250ms linear;
+    transition: opacity 250ms linear;
+}
+.download_content {
+    display: flex;
+    width: 100%;
+    margin: 0vw;
+}
+
+.download_content li {
+    align-items: center;
+    justify-content: center;
+    height: 17rem;
+    width: 100%;
+    padding: 2vw;
+    margin: 0 0.5vw 0 0.5vw;
+    list-style: none;
+    background-color: #1b1b1b;
+    box-shadow: black 2px 2px 20px 2px;
+}
+
+.download_content h1 {
+    margin-bottom: 1vw;
+    font-size: 3.5vmin;
+    padding: 2vw 2vw 2vw 2vw;
+}
+
+.download_content p {
+    font-size: 2.5vmin;
+}

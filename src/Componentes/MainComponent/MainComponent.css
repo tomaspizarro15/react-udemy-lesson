@@ -22,7 +22,7 @@
     justify-content: center;
     display: flex;
     flex-direction: row;
-    position: absolute;
+    position: relative;
     vertical-align: text-bottom;    
 }
 
@@ -57,12 +57,10 @@
     position: relative;
     z-index: 600;
     transition: transform 500ms ease-in;
-    transform: translateY(-5.5rem);
 }
 .main_uno.close {
     z-index: 600;
     transition: transform 500ms ease-in;
-    transform: translateY(-20.5rem);
 }
 .main_uno_descarga {
     z-index: 600;
@@ -116,23 +114,25 @@
    
 }
 .main_uno_descarga button {
-   background-color:rgba(255, 255, 255, 0.3);
-   transition: color 250ms linear ;
-   color: rgb(0, 0, 0); 
+   background-color:#1b1b1b;
+   color:white; 
    width: 33%;
    height: 2.2rem;
    font-size: 1.5rem;
-   border-radius: 2px;
-   transition: background-color 50ms;
-   border: hidden;
+   border-radius: 16px;
+   border: 1px solid rgb(253, 207, 0);
+   transition: color 650ms linear;
+   transition: border 650ms linear;
+   transition: background-color 650ms;
 }
 .main_uno_descarga button:hover {
-    color: rgb(253, 207, 0);
-    background-color: white;
+    color: rgb(253, 207, 0);   
+    background-color: #3b3b3b;
     text-decoration: solid;
     cursor: pointer;
-    transition: background-color 250ms;
-    transition: color 250ms linear;
+    transition: color 650ms linear;
+    transition: border 650ms linear;
+    transition: background-color 650ms;
     
 }
 
@@ -290,7 +290,7 @@
       width: 100%;
       z-index: 500;
       position: relative;
-      margin: 1.5vw 0 0.5vw 0;
+      margin: 0.5vw 0 0.5vw 0;
       padding: 0;
       justify-content: center;
   }
@@ -299,6 +299,6 @@
       margin: 0;
       padding: 0;
       font-family: 'Roboto' sans-serif;
-      font-size: 2vw;
+      font-size: 1.55vw;
       color: white; 
   }

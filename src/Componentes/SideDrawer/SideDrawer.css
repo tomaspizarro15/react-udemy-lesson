@@ -53,12 +53,12 @@
 }
 
 .sidedrawer_list {
-    background-color: rgb(255, 255, 255);
+    background-color: #1b1b1b;
     margin: 0;
     padding: 0;
 }
 .sidedrawer_title {
-    background-color: black;
+    background-color: transparent;
     height: 2.8vw;
 }
 .sidedrawer_title li {
@@ -68,7 +68,6 @@
 }
 
 .sidedrawer_content li {
-    background-color: white;
     list-style: none;
     height: auto;
     margin: 0.4vw 0 0.4vw 0;
@@ -91,7 +90,7 @@
     transition: margin-left 300ms linear;
 }
 .sidedrawer a {
-    color: black;
+    color: #9b9b9b;
     text-decoration: none;
     margin: 0 0 0 0.5vw;
     width: 90%;

@@ -15,32 +15,9 @@ const CentralBody = (props) => {
 
     return (
 
-                                                                                                                        
-
         <div className="main_component">
 
-            <div className={mainUnoClasses}>
-                <div className='main_uno_descarga' >
-                    <div className="uno_content">
-                        <h1>React for Windows</h1>
-                        <p>Latest version of React</p>
-                        <p>V 1.23.3</p>
-                        <div>
-                            <button>Download</button>
-                        </div>
-                    </div>
-                    <div className="uno_content">
-                        <h1>React for MAC</h1>
-                        <p>Current version for Apple Devices</p>
-                        <p>V 1.23.3</p>
-                        <div>
-                            <button>Download</button>
-                        </div>
-                    </div>
-                </div>
-                <div className="main_uno_arrow">
-                    <i onClick={props.clickArrow}></i>
-                </div>
+            <div>
 
             </div>
             <div className="main_central">
