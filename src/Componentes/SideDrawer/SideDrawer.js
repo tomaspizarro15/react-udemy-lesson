@@ -15,6 +15,7 @@ const sideDrawer = (props) => {
                 <li><a href="/">{props.content2}</a></li>
                 <li><a href="/">{props.content3}</a></li>
                 <li><a href="/">{props.content4}</a></li>
+                
             </div>
         </ul >
     );

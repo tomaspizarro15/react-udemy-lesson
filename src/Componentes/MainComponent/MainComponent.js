@@ -9,7 +9,7 @@ class MainComponents extends Component {
 
     state = {
         tarjetas: [
-            { id: 1, title: "React", content: "Angular JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" , img : {}},
+            { id: 1, title: "React", content: "Angular JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
             { id: 2, title: "JSX", content: "React JSX front-end webside developing course", buttonFree: "Free course", buttonPay: "Paid course" },
             { id: 3, title: "Angular", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
             { id: 4, title: "Vue", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },

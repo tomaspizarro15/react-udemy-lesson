@@ -1,15 +1,20 @@
 import React from 'react';
-import './NavigationTools.css'
+import './NavigationTools.css';
+
 
 
 const NavigationTools = (props) => {
 
-    return (
-        <div className=" navigation_tools">
-          <li>{props.title}</li>
-          
-        </div>
-    )
+
+
+  return (
+
+    <div className ="nav_tools">
+      <ul>
+        <li><button onClick = {props.click}>{props.titulo}</button></li>
+      </ul>
+    </div>
+  )
 }
 
 

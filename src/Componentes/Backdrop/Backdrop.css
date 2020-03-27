@@ -5,7 +5,8 @@ position: fixed;
 top: 0; 
 left: 0; 
 background: #1b1b1b;
-z-index:200;
+z-index:100;
+opacity:1;
 }
 
 

@@ -71,6 +71,9 @@ class Componente1 extends Component {
     )
   }
 
+
+
+
   edadChangedHandler = (event, id) => {
 
     const personIndex = this.state.persons.findIndex(person => {
@@ -100,12 +103,12 @@ class Componente1 extends Component {
 
     return (
       <StyleRoot>
-        <div className="App" style={{ height: '100%' }} >
-          <Backdrop/>
-          <NavBar />  
+        <div className="App" style={{ height: '100%' }} > 
           <main style={{ marginTop: '0%' }}>
           </main> 
+          <NavBar/>
           <MainComponents/>
+          <Backdrop/>
           <MobileDownload/>
         </div>
       </StyleRoot>

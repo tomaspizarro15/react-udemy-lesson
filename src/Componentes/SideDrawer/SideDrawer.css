@@ -28,16 +28,16 @@
 
 .sidedrawer_button {
     padding: 0.1vw;
-    background-color: black;
+    background-color: rgb(253, 207, 0);
 }
 .sidedrawer_button button {
     border: 0;
     background-color: transparent;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 2vw;
 }
 .sidedrawer_button button:hover {
-    color: rgb(253,207,0);
+    color: rgb(111,0,255);
     cursor: pointer;
 }
 .sidedrawer::-webkit-scrollbar {
@@ -64,7 +64,7 @@
 .sidedrawer_title li {
     padding: 0;
     margin: 0;
-    background-color: rgb(253,207,0);
+    background-color: rgb(111, 0, 255);
 }
 
 .sidedrawer_content li {
@@ -98,7 +98,7 @@
 }
 .sidedrawer h1 {
     margin: 0 0 0 0.5vw;
-    color: black;
+    color: rgb(253,207,0);
     padding: 0.3vw 0 0.3vw 0;
     font-size: 1.5vw;
 }
