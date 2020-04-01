@@ -1,0 +1,16 @@
+.marking_dot_container{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 400;
+    height: 15px;
+    width: 98.5vw;
+    justify-content: center;
+    bottom: 0;
+}
+.dot {
+    background-color:red;
+    width: 10px;
+    height: 10px;
+}

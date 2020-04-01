@@ -106,7 +106,6 @@ class Componente1 extends Component {
         <div className="App" style={{ height: '100%' }} > 
           <main style={{ marginTop: '0%' }}>
           </main> 
-          <NavBar/>
           <MainComponents/>
           <Backdrop/>
           <MobileDownload/>

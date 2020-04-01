@@ -1,0 +1,52 @@
+.head_component {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 400;
+    width: 100%;
+    height: 61%;
+    margin: 1% 0 1% 0;
+    background-color: #1b1b1b;
+
+}
+.head_bubble_bottom {
+    position: absolute;
+    bottom: 0;
+    width: 20vw;
+    height: 20vw;
+    background-color: rgb(111, 0 , 255);
+    border-radius: 360px 0 0 0;
+    right: 0;
+}
+.head_bubble_top {
+    position: absolute;
+    top: 0;
+    width: 12vw;
+    height: 12vw;
+    background-color: rgb(255 , 102 , 0);
+    border-radius: 0 0 360px 0;
+    left: 0;
+}
+.head_component button {
+    margin-left: 2%;
+    height: 15%;
+    width: 15%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5vw;
+    border-radius: 32px;
+    border: none;
+     background-color: rgb(255 , 102 , 0);
+}
+.head_component h1{
+    font-size: 3.5vw;
+    color: white;
+    text-decoration:rgb(111, 0 , 255) underline;
+}
+.head_component button:hover {
+   
+    color: white;
+    cursor: pointer;
+
+}

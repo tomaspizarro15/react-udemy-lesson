@@ -68,7 +68,7 @@ const Modal = (props) => {
 
     return (
 
-        <div className={modalClassesContainer} onClick = {props.click}>
+        <div className={modalClassesContainer}>
 
             <div className={modalClasses}>
                 <div className="modal_title">

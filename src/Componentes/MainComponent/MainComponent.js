@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import CentralBody from './CentralBody';
-import "./MainComponent.css";
 import LowComponent from '../LowComponent/LowComponent';
-import featuredComponent from './FeaturedComponent';
+import HeadComponent from './HeadComponent/HeadComponent';
+import AboutComponent from './AboutComponent/AboutComponent';
+import './AboutComponent/AboutComponent.css'
+import MarkingDot from './MarkingDot/MarkingDot';
+
 
 
 class MainComponents extends Component {
@@ -25,20 +27,29 @@ class MainComponents extends Component {
             { id: 14, title: "Java", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
             { id: 15, title: "C++", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
             { id: 16, title: "C#", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            
+
         ],
+
+        AboutComponentContenidos: [
+            { id: 1, primerTitulo: "Sobre la programacion", segundoTitulo: "Tipos de programacion", contenido: "asd" },
+            { id: 2, primerTitulo: "Sobre la industria", segundoTitulo: "Tipos de programadores", contenido: "asd" },
+            { id: 3, primerTitulo: "Sobre nosotros", segundoTitulo: "RFCode", contenido: "asda" },
+
+        ],
+        aboutTransformValue: 0,
+
+        aboutIterador: 0,
         iterador: 0,
         tarjetasPos: 0,
-        transformValue : 0,
+        transformValue: 0,
         showDescarga: true,
         showArrow: false,
         showBackDrop: false,
         featuredTitle: 'Featured Curses',
     }
 
-    showBackDropHandler = () => {
-        this.setState({ showArrow: true })
-    }
+
+
 
     showSideDrawerHandler = () => {
 
@@ -82,104 +93,164 @@ class MainComponents extends Component {
 
     //SLIDER LOGICS AND ITERATORS
 
-     lengthTarjetas = (this.state.tarjetas.length /3)
-     lengthTarjetas = Math.ceil(this.lengthTarjetas);
+    lengthTarjetas = (this.state.tarjetas.length / 4)
+    lengthTarjetas = Math.ceil(this.lengthTarjetas);
+
 
     iterador = this.state.iterador;
     contador = 0;
-    
-    slideDecreaserHandler = () => {
-    
-    if (this.state.iterador < (this.lengthTarjetas)) {
 
-            this.setState({ iterador: this.state.iterador + 1 })
-            this.setState({ transformValue : this.state.transformValue - 49.25})
+    aboutIncreaserHandler = () => {
 
-            console.log("=====>", this.state.iterador)
-            console.log("=====>" , this.state.transformValue)
-            console.log("ARRAY LENGTH ========>" ,this.lengthTarjetas)
-        }else {
-            this.setState({transformValue : 0})
-            this.setState({iterador : 0})
+
+
+        if (this.state.aboutIterador > 0) {
+
+            this.setState({ aboutTransformValue: this.state.aboutTransformValue + 98.45 })
+            this.setState({ aboutIterador: this.state.aboutIterador - 1 })
+
+
+            console.log(this.state.aboutIterador)
+
+
+
         }
 
     }
-    
-    slideIncreaserHandler = () => {
-    
+
+    aboutDecreaserHandler = () => {
+
+
+
+        if (this.state.aboutIterador < (this.state.AboutComponentContenidos.length - 1)) {
+
+
+            this.setState({ aboutTransformValue: this.state.aboutTransformValue - 98.45 })
+            this.setState({ aboutIterador: this.state.aboutIterador + 1 })
+            console.log(this.state.aboutTransformValue)
+            console.log(this.state.aboutIterador)
+
+
+        }
+
+
+
+    }
+
+
+    cursosDecreaserHandler = () => {
+
+        if (this.state.iterador < (this.lengthTarjetas)) {
+
+            this.setState({ iterador: this.state.iterador + 1 })
+            this.setState({ transformValue: this.state.transformValue - 98.5 })
+
+            console.log("=====>", this.state.iterador)
+            console.log("=====>", this.state.transformValue)
+            console.log("ARRAY LENGTH ========>", this.lengthTarjetas)
+        } else {
+            this.setState({ transformValue: 0 })
+            this.setState({ iterador: 0 })
+        }
+
+    }
+
+    cursosIncreaserHandler = () => {
+
         if (this.state.iterador > 0) {
 
-            this.setState({ iterador: this.state.iterador -1})
-            this.setState({ transformValue : this.state.transformValue + 49.25})
-           
+            this.setState({ iterador: this.state.iterador - 1 })
+            this.setState({ transformValue: this.state.transformValue + 98.5 })
+
             console.log(this.contador)
             console.log("=====>", this.state.iterador)
-            console.log("=====>" , this.state.transformValue)
-        }else {
-            this.setState({transformValue : -(this.lengthTarjetas * 49.25)})
-            this.setState({iterador : this.lengthTarjetas})
+            console.log("=====>", this.state.transformValue)
+        } else {
+            this.setState({ transformValue: -(this.lengthTarjetas * 98.5) })
+            this.setState({ iterador: this.lengthTarjetas })
         }
     }
 
     //RENDERING
     render() {
 
-
-
-        let translation =  [ "translateX(" ,this.state.transformValue , "vw)"]; 
-
+        let aboutTranslate = ["translateX(", this.state.aboutTransformValue, "vw)"];
+        let translation = ["translateX(", this.state.transformValue, "vw)"];
 
         translation = translation.join("");
         translation = translation.trim();
         translation = translation.toString();
 
-        
+        aboutTranslate = aboutTranslate.join("")
+        aboutTranslate = aboutTranslate.toString();
+        aboutTranslate = aboutTranslate.trim()
+
         let tarjetas = [...this.state.tarjetas];
-
-        let sliderCurrentPosition = ["low_component_position"] 
-      
-         
         return (
-            <div>
-                <div className="fixer">
-                    <CentralBody
-                        test={this.testHandler}
-                        clickArrow={this.showDescargaHandler}
-                        showDescarga={this.state.showDescarga}
-                        redirectGH={this.redirectGitHubHandler}
-                        redirectReact={this.redirectReactHandler}
-                        redirectMendoza={this.redirectMendozaHandler}
-                       
-                    />
-                    <div className ="header_low_component">
-                        <p>Featured Curses</p>
+            <div style={{ position: "absolute", height: "100%", width: "100%" }} >
+
+
+                <HeadComponent />
+
+
+                <div className="low_component_background">
+                    <div className="low_component_arrow_left">
+                        <p><i className="arrow_left" onClick={this.cursosIncreaserHandler}></i></p>
                     </div>
-                    <div className= "low_component_container">
+                    <div className="low_component_arrow_right">
+                        <p><i className="arrow_right" onClick={this.cursosDecreaserHandler}></i></p>
+                    </div>
+                    <div className="low_component">
 
-                        <div className="arrow_container_right">
-                            <p><i className="arrow right" onClick={this.slideIncreaserHandler}></i></p>
-                        </div>
-                        <div className="low_component_container">
+                        <ul style={{ transform: translation, margin: "0", backgroundColor: "#aaaaaa" }}>
+                            {tarjetas.map((tarjeta, i) => {
+                                return (
+                                    <LowComponent
+                                        key={tarjeta.id}
+                                        content={tarjeta.content}
+                                        title={tarjeta.title}
+                                        buttonFree={tarjeta.buttonFree}
+                                        buttonPay={tarjeta.buttonPay} />
+                                )
+                            })}
+                        </ul>
 
-                            <ul style = {{transform: translation}} className = {sliderCurrentPosition}>
-                                {tarjetas.map((tarjeta, i) => {
-                                    return (
-                                        <LowComponent
-                                            key={tarjeta.id}
-                                            content={tarjeta.content}
-                                            title={tarjeta.title}
-                                            buttonFree={tarjeta.buttonFree}
-                                            buttonPay={tarjeta.buttonPay} />
-                                    )
-                                })}
-                            </ul>
-                        </div>
-                        <div className="arrow_container_left">
-                            <p><i className="arrow left" onClick={this.slideDecreaserHandler}></i></p>
-                        </div>
+
                     </div>
 
                 </div>
+
+                <div className="about_component_container">
+
+                    <div className="about_component_slider_button_left" onClick={this.aboutIncreaserHandler}></div>
+                    <div className="about_component_slider_button_right" onClick={this.aboutDecreaserHandler}></div>
+
+
+                    <ul style={{ transform: aboutTranslate }}>
+                        {
+                            this.state.AboutComponentContenidos.map(contenido => {
+                                return (
+                                    <div style = {{height : "100%"}}>
+                                        <AboutComponent
+                                            primerTitulo={contenido.primerTitulo}
+                                            segundoTitulo={contenido.segundoTitulo}
+
+                                        />
+                                    </div>
+
+                                )
+
+                            })
+                        }
+
+                       
+
+                    </ul>
+
+                    <MarkingDot/>
+
+                </div>
+
             </div>
         )
     };
