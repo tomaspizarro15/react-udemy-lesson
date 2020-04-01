@@ -2,11 +2,14 @@ import React from 'react';
 import './MarkingDot.css';
 
 
-const MarkingDot = () => {
+const MarkingDot = (props) => {
+
+    let dotClasses = "dot"
+
 
     return(
-        <div className ="marking_dot_container">
-            <div className ="dot"></div>
+        <div className = {dotClasses}>
+            
         </div>
     );
 

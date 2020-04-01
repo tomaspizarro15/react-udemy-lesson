@@ -4,6 +4,8 @@ import HeadComponent from './HeadComponent/HeadComponent';
 import AboutComponent from './AboutComponent/AboutComponent';
 import './AboutComponent/AboutComponent.css'
 import MarkingDot from './MarkingDot/MarkingDot';
+import SliderButton from './AboutComponent/SliderButtons/SliderButton';
+import LowSliderButton from '../LowComponent/LowSliderButton/LowSliderButton';
 
 
 
@@ -31,20 +33,24 @@ class MainComponents extends Component {
         ],
 
         AboutComponentContenidos: [
-            { id: 1, primerTitulo: "Sobre la programacion", segundoTitulo: "Tipos de programacion", contenido: "asd" },
-            { id: 2, primerTitulo: "Sobre la industria", segundoTitulo: "Tipos de programadores", contenido: "asd" },
-            { id: 3, primerTitulo: "Sobre nosotros", segundoTitulo: "RFCode", contenido: "asda" },
-
+            { id: 1, primerTitulo: "Sobre la programacion", segundoTitulo: "Tipos de programacion", contenido: "asd", status: false },
+            { id: 2, primerTitulo: "Sobre la industria", segundoTitulo: "Tipos de programadores", contenido: "asd", status: false },
+            { id: 3, primerTitulo: "Sobre nosotros", segundoTitulo: "RFCode", contenido: "asda", content: "asd", status: false },
         ],
-        aboutTransformValue: 0,
 
+
+        aboutTransformValue: 0,
         aboutIterador: 0,
         iterador: 0,
         tarjetasPos: 0,
         transformValue: 0,
+
+
         showDescarga: true,
         showArrow: false,
         showBackDrop: false,
+
+
         featuredTitle: 'Featured Curses',
     }
 
@@ -138,6 +144,7 @@ class MainComponents extends Component {
     }
 
 
+
     cursosDecreaserHandler = () => {
 
         if (this.state.iterador < (this.lengthTarjetas)) {
@@ -187,21 +194,16 @@ class MainComponents extends Component {
 
         let tarjetas = [...this.state.tarjetas];
         return (
-            <div style={{ position: "absolute", height: "100%", width: "100%" }} >
+            <div style={{ position: "absolute", height: "100%", width: "100%", alignItems: "center" }} >
+                <HeadComponent
 
-
-                <HeadComponent />
-
-
+                />
                 <div className="low_component_background">
-                    <div className="low_component_arrow_left">
-                        <p><i className="arrow_left" onClick={this.cursosIncreaserHandler}></i></p>
-                    </div>
-                    <div className="low_component_arrow_right">
-                        <p><i className="arrow_right" onClick={this.cursosDecreaserHandler}></i></p>
-                    </div>
+                    <LowSliderButton
+                        clickIncrease={this.cursosIncreaserHandler}
+                        clickDecrease={this.cursosDecreaserHandler}
+                    />
                     <div className="low_component">
-
                         <ul style={{ transform: translation, margin: "0", backgroundColor: "#aaaaaa" }}>
                             {tarjetas.map((tarjeta, i) => {
                                 return (
@@ -210,46 +212,45 @@ class MainComponents extends Component {
                                         content={tarjeta.content}
                                         title={tarjeta.title}
                                         buttonFree={tarjeta.buttonFree}
-                                        buttonPay={tarjeta.buttonPay} />
+                                        buttonPay={tarjeta.buttonPay}
+                                    />
                                 )
                             })}
                         </ul>
-
-
                     </div>
-
                 </div>
-
                 <div className="about_component_container">
-
-                    <div className="about_component_slider_button_left" onClick={this.aboutIncreaserHandler}></div>
-                    <div className="about_component_slider_button_right" onClick={this.aboutDecreaserHandler}></div>
-
-
+                    {this.state.AboutComponentContenidos.map(sButton => {
+                        return (
+                            <div>
+                                <SliderButton
+                                    clickIncrease={this.aboutIncreaserHandler}
+                                    clickDecrease={this.aboutDecreaserHandler}
+                                />
+                            </div>
+                        );
+                    })}
                     <ul style={{ transform: aboutTranslate }}>
                         {
                             this.state.AboutComponentContenidos.map(contenido => {
                                 return (
-                                    <div style = {{height : "100%"}}>
-                                        <AboutComponent
-                                            primerTitulo={contenido.primerTitulo}
-                                            segundoTitulo={contenido.segundoTitulo}
-
-                                        />
-                                    </div>
-
+                                    <AboutComponent
+                                        primerTitulo={contenido.primerTitulo}
+                                        segundoTitulo={contenido.segundoTitulo}
+                                    />
                                 )
-
                             })
                         }
-
-                       
-
                     </ul>
-
-                    <MarkingDot/>
-
                 </div>
+                <div className ="dots_container"> 
+                    {this.state.AboutComponentContenidos.map(dot => {
+                        return (
+                            <MarkingDot />
+                        );
+                    })}
+                </div>
+
 
             </div>
         )

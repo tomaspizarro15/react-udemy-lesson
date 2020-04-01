@@ -51,19 +51,3 @@
     border-radius: 6px;
 
 }
-.about_component_slider_button_left {
-    position: absolute;
-    left : 0; 
-    width: 10%;
-    height: 100%;
-    z-index: 400;
-}
-
-.about_component_slider_button_right {
-    position: absolute;
-    right: 0; 
-    width: 10%;
-    height: 100%;
-    z-index: 400;
-
-}

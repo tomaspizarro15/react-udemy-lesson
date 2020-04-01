@@ -4,8 +4,7 @@ import './ResponsiveNavigationBar.css'
 
 
 const NavigationInput = () => {
-
-
+    
     return (
         <div className="nav_bar_input">
             <img src = {searchLogo} alt = "search_logo" style = {{height : "20px" , width : "20px"}}></img>
@@ -14,8 +13,5 @@ const NavigationInput = () => {
     );
 
 }
-
-
-
 
 export default NavigationInput; 

@@ -163,8 +163,6 @@ class NavBar extends Component {
                             })}
                         </div>
                     </div>
-
-
                     <Modal
                         click={this.cerrarModalHandler}
                         instancia={this.state.instanciaModal}
