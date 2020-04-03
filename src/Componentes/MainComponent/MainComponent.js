@@ -33,9 +33,13 @@ class MainComponents extends Component {
         ],
 
         AboutComponentContenidos: [
-            { id: 1, primerTitulo: "Sobre la programacion", segundoTitulo: "Tipos de programacion", contenido: "asd", status: false },
-            { id: 2, primerTitulo: "Sobre la industria", segundoTitulo: "Tipos de programadores", contenido: "asd", status: false },
-            { id: 3, primerTitulo: "Sobre nosotros", segundoTitulo: "RFCode", contenido: "asda", content: "asd", status: false },
+            { id: 0, primerTitulo: "0 ", segundoTitulo: "Tipos de programacion", contenido: "asd", isActive: true },
+            { id: 1, primerTitulo: "1 ", segundoTitulo: "Tipos de programacion", contenido: "asd", isActive: false },
+            { id: 2, primerTitulo: "2 ", segundoTitulo: "Tipos de programacion", contenido: "asd", isActive: false },
+            { id: 3, primerTitulo: "3 ", segundoTitulo: "Tipos de programacion", contenido: "asd", isActive: false },
+            { id: 4, primerTitulo: "4 ", segundoTitulo: "Tipos de programacion", contenido: "asd", isActive: false },
+
+
         ],
 
 
@@ -53,9 +57,6 @@ class MainComponents extends Component {
 
         featuredTitle: 'Featured Curses',
     }
-
-
-
 
     showSideDrawerHandler = () => {
 
@@ -106,39 +107,49 @@ class MainComponents extends Component {
     iterador = this.state.iterador;
     contador = 0;
 
-    aboutIncreaserHandler = () => {
+    aboutDecreaserHandler = (contenido, i) => {
 
+        const itemsArray = [...this.state.AboutComponentContenidos]
+        const oldItem = itemsArray[i]
+        let prevItem = itemsArray[i - 1];
 
+        if (!prevItem) return;
+
+        oldItem.isActive = false;
+        prevItem.isActive = true;
 
         if (this.state.aboutIterador > 0) {
 
             this.setState({ aboutTransformValue: this.state.aboutTransformValue + 98.45 })
             this.setState({ aboutIterador: this.state.aboutIterador - 1 })
-
+            this.setState({ AboutComponentContenidos: itemsArray })
 
             console.log(this.state.aboutIterador)
-
-
-
         }
 
     }
 
-    aboutDecreaserHandler = () => {
+    aboutIncreaserHandler = (contenido, i) => {
+        // 0 
+        const itemsArray = [...this.state.AboutComponentContenidos]
 
+        const oldItem = itemsArray[i]
+        let nextItem = itemsArray[i + 1];
 
+        if (!nextItem) return;
+
+        oldItem.isActive = false;
+        nextItem.isActive = true;
 
         if (this.state.aboutIterador < (this.state.AboutComponentContenidos.length - 1)) {
 
-
             this.setState({ aboutTransformValue: this.state.aboutTransformValue - 98.45 })
             this.setState({ aboutIterador: this.state.aboutIterador + 1 })
-            console.log(this.state.aboutTransformValue)
-            console.log(this.state.aboutIterador)
+            this.setState({ AboutComponentContenidos: itemsArray })
 
 
         }
-
+        console.log(this.state.AboutComponentContenidos)
 
 
     }
@@ -220,37 +231,36 @@ class MainComponents extends Component {
                     </div>
                 </div>
                 <div className="about_component_container">
-                    {this.state.AboutComponentContenidos.map(sButton => {
-                        return (
-                            <div>
-                                <SliderButton
-                                    clickIncrease={this.aboutIncreaserHandler}
-                                    clickDecrease={this.aboutDecreaserHandler}
-                                />
-                            </div>
-                        );
-                    })}
+
+
                     <ul style={{ transform: aboutTranslate }}>
                         {
-                            this.state.AboutComponentContenidos.map(contenido => {
+                            this.state.AboutComponentContenidos.map((contenido, i) => {
                                 return (
-                                    <div className="about_content_container">
-                                        <AboutComponent
-                                            primerTitulo={contenido.primerTitulo}
-                                            segundoTitulo={contenido.segundoTitulo}
-                                        />
-                                        <div className ="dot_container">
-                                            <MarkingDot
-                                            />
-                                        </div>
-                                    </div>
+                                    <AboutComponent
+                                        primerTitulo={contenido.primerTitulo}
+                                        segundoTitulo={contenido.segundoTitulo}
+                                        clickIncrease={() => this.aboutIncreaserHandler(contenido, i)}
+                                        clickDecrease={() => this.aboutDecreaserHandler(contenido, i)}
+                                    />
                                 )
                             })
+
                         }
+
+
+
                     </ul>
+                    <div className="dot_container">
+                        {this.state.AboutComponentContenidos.map(dot => {
+                            return (
+                                <MarkingDot
+                                    isActive={dot.isActive}
+                                />
+                            )
+                        })}
+                    </div>
                 </div>
-
-
             </div>
         )
     };
