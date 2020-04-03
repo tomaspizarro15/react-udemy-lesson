@@ -17,4 +17,4 @@ const SliderButton = (props) => {
 
 }
 
-export default SliderButton
+export default React.memo(SliderButton)

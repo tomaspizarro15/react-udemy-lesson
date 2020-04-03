@@ -115,7 +115,7 @@ class Componente1 extends Component {
   }
 }
 
-export default Radium(Componente1);
+export default Componente1;
 
 
 

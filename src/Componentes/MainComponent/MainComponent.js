@@ -234,21 +234,20 @@ class MainComponents extends Component {
                         {
                             this.state.AboutComponentContenidos.map(contenido => {
                                 return (
-                                    <AboutComponent
-                                        primerTitulo={contenido.primerTitulo}
-                                        segundoTitulo={contenido.segundoTitulo}
-                                    />
+                                    <div className="about_content_container">
+                                        <AboutComponent
+                                            primerTitulo={contenido.primerTitulo}
+                                            segundoTitulo={contenido.segundoTitulo}
+                                        />
+                                        <div className ="dot_container">
+                                            <MarkingDot
+                                            />
+                                        </div>
+                                    </div>
                                 )
                             })
                         }
                     </ul>
-                </div>
-                <div className ="dots_container"> 
-                    {this.state.AboutComponentContenidos.map(dot => {
-                        return (
-                            <MarkingDot />
-                        );
-                    })}
                 </div>
 
 

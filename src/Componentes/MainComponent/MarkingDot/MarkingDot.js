@@ -18,4 +18,4 @@ const MarkingDot = (props) => {
 
 
 
-export default MarkingDot
+export default React.memo(MarkingDot)
