@@ -4,19 +4,14 @@ import './LowComponent.css'
 
 const LowComponent = (props) => {
 
-
     return (
-        
             <li>
-                <h1>{props.title}</h1>
+                <img src = {props.logo} alt = "logo_low_component" className ="low_component_logos"></img>
                 <p>{props.content}</p>
                 <button >Saber mas</button>
             </li>
      
     )
 }
-
-
-
 
 export default LowComponent;                      

@@ -6,40 +6,47 @@ import './AboutComponent/AboutComponent.css'
 import MarkingDot from './MarkingDot/MarkingDot';
 import SliderButton from './AboutComponent/SliderButtons/SliderButton';
 import LowSliderButton from '../LowComponent/LowSliderButton/LowSliderButton';
-
-
-
+import LogoAngular from './WebsiteLowComponentImages/iconAngular.png'
+import LogoReact from './WebsiteLowComponentImages/iconReact.png';
+import LogoCpp from './WebsiteLowComponentImages/iconCpp.png';
+import LogoDjango from './WebsiteLowComponentImages/iconDJango.png';
+import LogoGit from './WebsiteLowComponentImages/iconGit.png';
+import LogoJava from './WebsiteLowComponentImages/iconJava.png';
+import LogoNode from './WebsiteLowComponentImages/iconNode.png';
+import LogoJson from './WebsiteLowComponentImages/iconJson.png';
+import LogoPython from './WebsiteLowComponentImages/iconPython.png';
+import LogoUnreal from './WebsiteLowComponentImages/iconUnreal.png';
+import LogoUnity from './WebsiteLowComponentImages/inonUnity.png';
+import LogoVuejs from './WebsiteLowComponentImages/iconVue.png';
+import LogoCsharp from './WebsiteLowComponentImages/iconCSharp.png';
+import LogoSQL from './WebsiteLowComponentImages/iconSQL.png';
+import LogoJs from './WebsiteLowComponentImages/iconJs.png';
 class MainComponents extends Component {
 
     state = {
         tarjetas: [
-            { id: 1, title: "React", content: "Angular JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 2, title: "JSX", content: "React JSX front-end webside developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 3, title: "Angular", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 4, title: "Vue", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 5, title: "Python", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 6, title: "Python DJango", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 7, title: "PyGames", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 8, title: "Unreal Engine", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 9, title: "Unity", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 10, title: "JSON", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 11, title: "SQL Databases", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 12, title: "Node Databases", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 13, title: "Git Hub", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 14, title: "Java", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 15, title: "C++", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-            { id: 16, title: "C#", content: "Vue JS front-end website developing course", buttonFree: "Free course", buttonPay: "Paid course" },
-
+            { id: 0, title: "JavaScript", content: "Learn Javascript web Development", logo: LogoJs},
+            { id: 1, title: "React", content: "Learn React / React Native Development", logo: LogoReact },
+            { id: 2, title: "Angular", content: "Learn Angular Framework web Development", logo: LogoAngular },
+            { id: 3, title: "Vue", content: "Learn Vue.js Framework web Development", logo: LogoVuejs },
+            { id: 4, title: "Python", content: "Learn App design with Python", logo: LogoPython },
+            { id: 5, title: "Python DJango", content: "Learn Python framework App Development", logo: LogoDjango },
+            { id: 6, title: "Unreal Engine", content: "Learn how to use Unreal game Engine", logo: LogoUnreal },
+            { id: 7, title: "Unity", content: "Learn how to use Unity game Engine", logo: LogoUnity },
+            { id: 8, title: "JSON", content: "Learn Javascript Object notation", logo: LogoJson },
+            { id: 9, title: "SQL Databases", content: "Learn Databases development", logo: LogoSQL },
+            { id: 10, title: "Node", content: "Learn Node execution environment", logo: LogoNode },
+            { id: 11, title: "Git Hub", content: "Learn how to apply Git Hub to your projects", logo: LogoGit },
+            { id: 12, title: "Java", content: "Learn Java Object-oriented language", logo: LogoJava },
+            { id: 13, title: "C++", content: "Learn C++ Object-oriented language", logo: LogoCpp },
+            { id: 14, title: "C#", content: "Learn the evolution of C++ language", logo: LogoCsharp },
         ],
 
         AboutComponentContenidos: [
-            { id: 0, primerTitulo: "0 ", segundoTitulo: "Tipos de programacion", contenido: "asd", isActive: true },
-            { id: 1, primerTitulo: "1 ", segundoTitulo: "Tipos de programacion", contenido: "asd", isActive: false },
-            { id: 2, primerTitulo: "2 ", segundoTitulo: "Tipos de programacion", contenido: "asd", isActive: false },
-            { id: 3, primerTitulo: "3 ", segundoTitulo: "Tipos de programacion", contenido: "asd", isActive: false },
-            { id: 4, primerTitulo: "4 ", segundoTitulo: "Tipos de programacion", contenido: "asd", isActive: false },
-
-
+            { id: 0, primerTitulo: "Sobre La programacion", segundoTitulo: "Tipos de programacion", primerContenido: "La programacion es simplemente la resolucion de Problemas mediante el desarrollo de diversos algoritmos ,algoritmos que son ejecutados como un codigo , el codigo fuente , un programa debe ser eficiente ,independiente de su lenguaje, tiene que tener un ciclo de vida claro y poder resolver la problematica planteada" , segundoContenido : "(PE) Programación Estructurada , Programacion Modular , (POO)Programacion orientada a Objetos , Programacion Funcional , Programacion Logica", isActive: true },
+            { id: 1, primerTitulo: "La industria", segundoTitulo: "Ramas de la industria", primerContenido: "La industria de la programacion engloba tantas cosas que no podriamos contabilizarlas todas , el trabajo de un programador es enfocado al equipo y a la conexion con otras industrias, desde la seguridad , robotica, o diseño , es decir, que la programacion es importante en muchos ambitos y rubros del mundo actual , ya que siempre se necesitara a alguien que desarrolle la logica en los negocios y a su vez que resuelva problematicas" , segundoContenido : "Desarrollo Web, CyberSecurity, Desarrol  lo de Aplicaciones, Desarrollo de Videojuegos, Desarrollos de SO, Redes , Sistemas , Servidores", isActive: false },
+            { id: 2, primerTitulo: "Paradigmas", segundoTitulo: "Los paradigmas", primerContenido: "Los paradigmas son conceptos y reglas sobre la programacion , que modelan el proceso de desarrollo y procedimientos de un programa el correcto manejo y conocimiento de los paradigmas para un programador es una habilidad escencial para desarrollar su trabajo" , segundoContenido : "Los Paradigmas son: Imperativo , Declarativo , Funcional , Orientado de Objetos , de Procedimientos , Logico", isActive: false },
+            { id: 3, primerTitulo: "Tipos de Lenguajes", segundoTitulo: "Los lenguajes", primerContenido: "Hoy en dia existen cientos de miles de lenguajes de programacion , utilizados para cientos de distintos enfoques y distintos modelos y paradigmas de programas , aunque la gran mayoria de ellos no son muy usados , algunos perduran y muchos mueren , los mas usados son los mas requeridos logicamente, muchos evolucionaron como el famoso C , o muchos desarrollaron librerias y extensiones que perfeccionan el lenguaje como Python o JavaScript , tambien existen muchos tipos, como los lenguajes funcionales o tambien los lenguajes orientados a objetos , como Java." , segundoContenido : "Los lenguajes de programacion mas utilizados son : Python , C , C#, C++ , Java , JavaScript,Kotlin, Ruby, TypeScript y diversas Frameworks , cabe aclarar que un programa es independiente de todo Lenguaje de operacion y de Sistemas Operativos", isActive: false },
         ],
 
 
@@ -120,7 +127,7 @@ class MainComponents extends Component {
 
         if (this.state.aboutIterador > 0) {
 
-            this.setState({ aboutTransformValue: this.state.aboutTransformValue + 98.45 })
+            this.setState({ aboutTransformValue: this.state.aboutTransformValue + 79.75})
             this.setState({ aboutIterador: this.state.aboutIterador - 1 })
             this.setState({ AboutComponentContenidos: itemsArray })
 
@@ -143,7 +150,7 @@ class MainComponents extends Component {
 
         if (this.state.aboutIterador < (this.state.AboutComponentContenidos.length - 1)) {
 
-            this.setState({ aboutTransformValue: this.state.aboutTransformValue - 98.45 })
+            this.setState({ aboutTransformValue: this.state.aboutTransformValue - 79.75})
             this.setState({ aboutIterador: this.state.aboutIterador + 1 })
             this.setState({ AboutComponentContenidos: itemsArray })
 
@@ -156,7 +163,12 @@ class MainComponents extends Component {
 
 
 
-    cursosDecreaserHandler = () => {
+    cursosDecreaserHandler = (i) => {
+
+
+        let cursosItems = {...this.state.tarjetas}
+
+        let nextItem = cursosItems.id + 1; 
 
         if (this.state.iterador < (this.lengthTarjetas)) {
 
@@ -173,7 +185,7 @@ class MainComponents extends Component {
 
     }
 
-    cursosIncreaserHandler = () => {
+    cursosIncreaserHandler = (i) => {
 
         if (this.state.iterador > 0) {
 
@@ -192,7 +204,7 @@ class MainComponents extends Component {
     //RENDERING
     render() {
 
-        let aboutTranslate = ["translateX(", this.state.aboutTransformValue, "vw)"];
+        let aboutTranslate = ["translateX(", this.state.aboutTransformValue, "rem)"];
         let translation = ["translateX(", this.state.transformValue, "vw)"];
 
         translation = translation.join("");
@@ -215,13 +227,13 @@ class MainComponents extends Component {
                         clickDecrease={this.cursosDecreaserHandler}
                     />
                     <div className="low_component">
-                        <ul style={{ transform: translation, margin: "0", backgroundColor: "#aaaaaa" }}>
+                        <ul style={{ transform: translation, margin: "0", backgroundColor: "#2b2b2b" }}>
                             {tarjetas.map((tarjeta, i) => {
                                 return (
                                     <LowComponent
                                         key={tarjeta.id}
                                         content={tarjeta.content}
-                                        title={tarjeta.title}
+                                        logo={tarjeta.logo}
                                         buttonFree={tarjeta.buttonFree}
                                         buttonPay={tarjeta.buttonPay}
                                     />
@@ -239,7 +251,9 @@ class MainComponents extends Component {
                                 return (
                                     <AboutComponent
                                         primerTitulo={contenido.primerTitulo}
+                                        primerContenido ={contenido.primerContenido}
                                         segundoTitulo={contenido.segundoTitulo}
+                                        segundoContenido ={contenido.segundoContenido}
                                         clickIncrease={() => this.aboutIncreaserHandler(contenido, i)}
                                         clickDecrease={() => this.aboutDecreaserHandler(contenido, i)}
                                     />
