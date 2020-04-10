@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import "./ResponsiveNavigationBar.css"
 import "./DownloadComponent/DownloadComponent.css"
-import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
-import SideDrawer from '../SideDrawer/SideDrawer';
 import DownloadComponent from './DownloadComponent/DownloadComponent';
 import NavigationTools from './NavIgationTools';
 import Modal from '../Modal/Modal';
@@ -25,15 +23,6 @@ class NavBar extends Component {
             { id: "2", titulo: "Full-stack:", contenido: "Quiero aprender tanto front-end como back-end", logo: {} },
         ],
 
-
-        sideDrawerComponents: [
-            { id: "0", title: "Account", content1: "Settings", content2: "My Curses", content3: "My Projects", content4: "Log out" },
-            { id: "1", title: "Shop", content1: "Live Lessons", content2: "Curses", content3: "Products/Merch", content4: "Documents & Papers" },
-            { id: "2", title: "Community", content1: "QA Forum", content2: "Community Courses", content3: "Community Documentation", content4: "Community Projects" },
-            { id: "3", title: "About", content1: "About us", content2: "About React", content3: "Git hub", content4: "Social media" },
-            { id: "4", title: "Code Editors", content1: "Visual Studio Code", content2: "Atom", content3: "Sublime Text", content4: "Net beans" },
-        ],
-
         modalTitulo: "",
         modalContenido: "",
         modalFormulario: "",
@@ -47,6 +36,14 @@ class NavBar extends Component {
     }
 
 
+    abrirSD = () => {
+
+        let sideDrawerStatus = this.state.sideDrawerStatus;
+
+        this.setState({ sideDrawerStatus: !sideDrawerStatus })
+
+    }
+
     showDownloadComponentHandler = (downloadComponentStatus, downloadArrowStatus) => {
 
         downloadComponentStatus = this.state.downloadComponentStatus;
@@ -56,17 +53,6 @@ class NavBar extends Component {
         this.setState({ downloadComponentStatus: !downloadComponentStatus, downloadArrowStatus: !downloadArrowStatus })
 
     }
-
-
-    showSideDrawerHandler = () => {
-
-        const sideDrawerStatus = this.state.sideDrawerStatus;
-
-
-        this.setState({ sideDrawerStatus: !sideDrawerStatus })
-    }
-
-
 
     abrirModalHandler = (modal) => {
 
@@ -101,29 +87,22 @@ class NavBar extends Component {
         let status = this.state.sliderStatus;
 
         this.setState({ sliderStatus: !status })
+        alert("click")
     }
 
     render() {
 
-       
         let downloadComponentClasses = 'download_component_container'
         let arrowClasses = 'arrow'
-        let sideDrawerClasses = 'sidedrawer'
 
-        if(!this.state.sliderStatus) {
+        if (!this.state.sliderStatus) {
             arrowClasses = 'arrow close'
             downloadComponentClasses = 'download_component_container close'
         }
-
-        if (this.state.sideDrawerStatus) {
-            sideDrawerClasses = 'sidedrawer open'
-        }
-
         return (
 
             <div className="container">
                 <div className="navigation_bar">
-                    <DrawerToggleButton click={this.showSideDrawerHandler} />
                     <BrandLogo />
                     <NavigationInput />
                     <div className="nav_bar_tools">
@@ -144,24 +123,7 @@ class NavBar extends Component {
                     </div>
                     <div style={{ display: "flex" }}>
 
-                        <div className={sideDrawerClasses}>
-                            <div className="sidedrawer_button"><button onClick={this.showSideDrawerHandler}>Close</button></div>
-                            {this.state.sideDrawerComponents.map((props, i) => {
-                                return (
-                                    <SideDrawer
-                                        key={i}
-                                        show={this.state.SideDrawerStatus}
-                                        title={props.title}
-                                        content1={props.content1}
-                                        content2={props.content2}
-                                        content3={props.content3}
-                                        content4={props.content4}
-                                        click={this.showSideDrawerHandler}
-                                    >
-                                    </SideDrawer>
-                                );
-                            })}
-                        </div>
+
                     </div>
                     <Modal
                         click={this.cerrarModalHandler}
@@ -176,7 +138,7 @@ class NavBar extends Component {
                     />
 
                 </div>
-                <div className= {downloadComponentClasses}>
+                <div className={downloadComponentClasses}>
                     <div className="download_component">
                         {this.state.typesOfCourses.map(props => {
                             return (
@@ -190,7 +152,7 @@ class NavBar extends Component {
                             )
                         })}
                         <div className="download_component_arrow">
-                            <p><i className= {arrowClasses} onClick = {this.cerrarSlider}></i></p>
+                            <p><i className={arrowClasses} onClick={this.cerrarSlider}></i></p>
                         </div>
                     </div>
 

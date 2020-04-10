@@ -1,18 +1,18 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 ////////////////////////////////////////////////////
-import NavBar from './Componentes/NavigationBar/ResponsiveNavigationBar'        ;
 import Backdrop from './Componentes/Backdrop/Backdrop';
-import Radium, { StyleRoot } from 'radium';
 import './App.css';
 import MainComponents from './Componentes/MainComponent/MainComponent';
 import MobileDownload from './Componentes/MobileDownloadComponent/MobileDownload';
+import SideDrawer from './Componentes/SideDrawer/SideDrawer';
+import { BrowserRouter } from 'react-router-dom';
 
 
 class Componente1 extends Component {
 
   constructor(props) {
     super(props);
-    console.log('[App.js] constructor') 
+    console.log('[App.js] constructor')
   }
 
   state = {
@@ -102,15 +102,16 @@ class Componente1 extends Component {
   render() {
 
     return (
-      <StyleRoot>
-        <div className="App" style={{ height: '100%' }} > 
+      <BrowserRouter>
+        <div className="App" style={{ height: '100%' }} >
           <main style={{ marginTop: '0%' }}>
-          </main> 
-          <MainComponents/>
-          <Backdrop/>
-          <MobileDownload/>
+          </main>
+          <MainComponents />
+          <Backdrop />
+          <MobileDownload />
+          <SideDrawer />
         </div>
-      </StyleRoot>
+      </BrowserRouter>
     )
   }
 }

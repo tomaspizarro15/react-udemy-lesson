@@ -21,6 +21,7 @@ import LogoVuejs from './WebsiteLowComponentImages/iconVue.png';
 import LogoCsharp from './WebsiteLowComponentImages/iconCSharp.png';
 import LogoSQL from './WebsiteLowComponentImages/iconSQL.png';
 import LogoJs from './WebsiteLowComponentImages/iconJs.png';
+import Chart from './Chart/Chart';
 class MainComponents extends Component {
 
     state = {
@@ -127,7 +128,7 @@ class MainComponents extends Component {
 
         if (this.state.aboutIterador > 0) {
 
-            this.setState({ aboutTransformValue: this.state.aboutTransformValue + 79.75})
+            this.setState({ aboutTransformValue: this.state.aboutTransformValue + 100})
             this.setState({ aboutIterador: this.state.aboutIterador - 1 })
             this.setState({ AboutComponentContenidos: itemsArray })
 
@@ -150,7 +151,7 @@ class MainComponents extends Component {
 
         if (this.state.aboutIterador < (this.state.AboutComponentContenidos.length - 1)) {
 
-            this.setState({ aboutTransformValue: this.state.aboutTransformValue - 79.75})
+            this.setState({ aboutTransformValue: this.state.aboutTransformValue - 100})
             this.setState({ aboutIterador: this.state.aboutIterador + 1 })
             this.setState({ AboutComponentContenidos: itemsArray })
 
@@ -164,11 +165,6 @@ class MainComponents extends Component {
 
 
     cursosDecreaserHandler = (i) => {
-
-
-        let cursosItems = {...this.state.tarjetas}
-
-        let nextItem = cursosItems.id + 1; 
 
         if (this.state.iterador < (this.lengthTarjetas)) {
 
@@ -204,7 +200,7 @@ class MainComponents extends Component {
     //RENDERING
     render() {
 
-        let aboutTranslate = ["translateX(", this.state.aboutTransformValue, "rem)"];
+        let aboutTranslate = ["translateX(", this.state.aboutTransformValue, "vw)"];
         let translation = ["translateX(", this.state.transformValue, "vw)"];
 
         translation = translation.join("");
@@ -217,7 +213,7 @@ class MainComponents extends Component {
 
         let tarjetas = [...this.state.tarjetas];
         return (
-            <div style={{ position: "absolute", height: "100%", width: "100%", alignItems: "center" }} >
+            <div style={{ position: "absolute", height: "100%", width: "100%", alignItems: "center"}} >
                 <HeadComponent
 
                 />
@@ -250,6 +246,7 @@ class MainComponents extends Component {
                             this.state.AboutComponentContenidos.map((contenido, i) => {
                                 return (
                                     <AboutComponent
+                                        key = {i}
                                         primerTitulo={contenido.primerTitulo}
                                         primerContenido ={contenido.primerContenido}
                                         segundoTitulo={contenido.segundoTitulo}
@@ -262,19 +259,19 @@ class MainComponents extends Component {
 
                         }
 
-
-
                     </ul>
                     <div className="dot_container">
                         {this.state.AboutComponentContenidos.map(dot => {
                             return (
                                 <MarkingDot
+                                    key = {dot.id}
                                     isActive={dot.isActive}
                                 />
                             )
                         })}
-                    </div>
+                    </div>      
                 </div>
+                <Chart/>
             </div>
         )
     };

@@ -145,10 +145,12 @@
 }
 .download_component_container.close {
   transform: translateY(-34.5rem);
+  -moz-transform: translateY(-38rem);
   transition: transform 750ms ease-out;
 }
 .download_component_container.close:hover {
   transform: translateY(-33.5rem);
+  -moz-transform: translateY(-37rem);
 }
 .download_component {
   display: flex;
@@ -210,4 +212,11 @@
   border-color: white;
   border-width: 0px 4px 4px 0px;
   transition: border-color 250ms ease-in-out;
+}
+.sidedrawer {
+  transition: transform 400ms ease-out;
+}
+.sidedrawer.open {
+  transform: translateX(25vw);
+  transition: transform 400ms ease-out;
 }

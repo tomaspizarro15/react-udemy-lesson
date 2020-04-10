@@ -7,6 +7,7 @@
     z-index: 500;
     width: 100%;
     height: 5%;
+    transform: translateY(-2vw);
 }
 .dot {
     width: 8px;
