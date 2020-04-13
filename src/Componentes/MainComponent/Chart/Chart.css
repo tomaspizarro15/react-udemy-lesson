@@ -16,7 +16,7 @@
 }
 .charts {
     width: 75%;
-    height: 5vw;
+    height: 6vw;
     border-radius: 4px;
     align-items: baseline;
     display: flex;
@@ -24,6 +24,9 @@
     margin: 0.5vw;
     background-color: #ffffff;
     box-shadow: 1px 1px 10px 0;
+}
+.charts h1 {
+    color: black;
 }
 .charts_body_container {
     height: 80%;
@@ -36,9 +39,9 @@
 }
 
 .charts_bar {
-    height: 20px;
+    height: 15px;
     background-color: #1b1b1b;    
-    border-radius: 0 16px 16px 0;
+    border-radius: 16px;
     margin-left: 2vw;
 }
 .charts_header {
@@ -51,10 +54,11 @@
     width: 100%;
     height: 10%;
     color: white;
-    background-color: rebeccapurple;
+    background-color: rgb(255 , 102, 0);
 }
 .charts_header h1 {
-    font-size: 1.5vw;
+    font-size: 2vw;
+    color: #1b1b1b;
 }
 .charts_name {
     width: 25%;

@@ -1,0 +1,205 @@
+.account_container {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 5vw 0 0 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  z-index: 300;
+  font-family: "Roboto", sans-serif;
+}
+
+.account {
+  box-shadow: 1px 1px 10px 0.5px inset grey;
+  border-radius: 6px;
+  width: 95%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.account_body {
+  width: 95%;
+  height: 85%;
+  background-color: transparent;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile_card_info {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.account_body_information {
+  width: 85%;
+  height: 100%;
+  margin-left: 2vw;
+  border-radius: 16px;
+  box-shadow: 0px 4.025px 20px -3.75px grey;
+  display: flex;
+  flex-direction: column;
+}
+
+.account_body_information h1 {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+  transition-delay: 500ms;
+  font-size: 3.5vmin;
+  margin: 0.5vw;
+}
+.account_body_information p {
+  margin: 0;
+  text-align: center;
+}
+
+.account li {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  width: 100%;
+  border-radius: 6px;
+  margin: 0.25vw 0 0.25vw 0;
+}
+.account p {
+  width: 30%;
+  height: 2vw;
+  margin-left: 1vw;
+}
+.account_lists {
+  width: 90%;
+  height: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25vw;
+  margin: 1vw 0 1vw 0;
+  box-shadow: 1px 0px 11px -3px;
+  border-radius: 3px;
+}
+
+.information_white {
+
+  height: 2.5%;
+  width: 100%;
+  background-color: white;
+  transition: height 500ms ease-in-out;
+  display: flex;
+  flex-direction: row;
+  color: black;
+}
+.user_info {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  padding: 2%;
+  background-color: transparent;
+}
+.user_info p{
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+.information_black {
+  height: 97.5%;
+  width: 100%;
+  background-color: #2b2b2b;
+  border-radius: 16px 16px 0 0;
+  transition: height 500ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.user_photo {
+  background-color: rgb(111, 0, 255);
+  width: 15vw;
+  height: 15vw;
+  border-radius: 120px;
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+  transition-delay: 500ms;
+  margin-bottom: 2.5vw;
+}
+.information_orange {
+  width: 100%;
+  height: 2.5%;
+  transition: height 500ms ease-in-out;
+  background-color: rgb(255, 102, 0);
+  display: flex;
+  flex-direction: row;
+}
+.user_socials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity 500ms ease-in-out;
+}
+.user_socials p{
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.account_body_information:hover h1 {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+.account_body_information:hover .information_white {
+  padding-top: 1vw;
+  height: 70%;
+  transition: height 500ms ease-in-out,
+    border-radius 200ms ease-in font-size 500ms;
+  transition-delay: 300ms;
+}
+.account_body_information:hover .information_black {
+  padding-top: 1vw;
+  height: 10%;
+  transition: height 500ms ease-in-out font-size 500ms;
+}
+.account_body_information:hover .information_orange {
+  padding-top: 1vw;
+  height: 20%;
+  transition: height 500ms ease-in-out;
+}
+
+.account_body_information:hover .user_photo {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+.account_body_information:hover .user_socials p{
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+
+.account_body_information:hover .user_info p{
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .account_container {
+    padding: 40px 0 0 0;
+  }
+  .account_body_information{
+    width: 100%;
+  }
+  .account {
+    box-shadow: none;
+  }
+}

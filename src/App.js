@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 import Backdrop from './Componentes/Backdrop/Backdrop';
 import './App.css';
 import MainComponents from './Componentes/MainComponent/MainComponent';
-import MobileDownload from './Componentes/MobileDownloadComponent/MobileDownload';
 import SideDrawer from './Componentes/SideDrawer/SideDrawer';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
+import NavBar from './Componentes/NavigationBar/ResponsiveNavigationBar';
+import AccountComponent from './RoutingComponents/AccountComponent/AccountComponent';
+import LogIn from './Componentes/LogIn/LogInComponent';
 
 
 class Componente1 extends Component {
@@ -27,6 +29,7 @@ class Componente1 extends Component {
     showPersons: true,
     showInfo: false,
     showDatosDelUsuario: true,
+    userLogIn : false, 
   }
 
 
@@ -101,16 +104,28 @@ class Componente1 extends Component {
   }
   render() {
 
+    let logInComponent = null; 
+    
+
+    if(!this.state.userLogIn) {
+
+
+      logInComponent = (
+        <LogIn/>
+      ) 
+
+
+
+    }
+
     return (
       <BrowserRouter>
-        <div className="App" style={{ height: '100%' }} >
-          <main style={{ marginTop: '0%' }}>
-          </main>
-          <MainComponents />
-          <Backdrop />
-          <MobileDownload />
-          <SideDrawer />
-        </div>
+        <NavBar />
+        <Backdrop />
+        <Route path="/" exact render={() => <MainComponents />} />
+        <Route path="/account" exact render ={() => <AccountComponent/>}/>
+        <SideDrawer />
+        {logInComponent}
       </BrowserRouter>
     )
   }

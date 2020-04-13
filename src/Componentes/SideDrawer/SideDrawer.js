@@ -9,7 +9,7 @@ class SideDrawer extends PureComponent {
 
         acc: [
 
-            { id: 0, text: "Account Settings", href: "/My-Settings" },
+            { id: 0, text: "Account Settings", href: "/account" },
             { id: 1, text: "My Curses", href: "/My-Courses" },
             { id: 2, text: "Favorites", href: "/My-Favourites" },
         ],
@@ -28,7 +28,7 @@ class SideDrawer extends PureComponent {
 
 
         ],
-
+                                                                                
         status: false,
     }
 

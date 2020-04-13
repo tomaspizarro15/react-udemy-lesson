@@ -87,7 +87,7 @@ class NavBar extends Component {
         let status = this.state.sliderStatus;
 
         this.setState({ sliderStatus: !status })
-        alert("click")
+      
     }
 
     render() {

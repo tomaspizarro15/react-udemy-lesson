@@ -6,7 +6,6 @@ import App from './App';
 import NavBar from './Componentes/NavigationBar/ResponsiveNavigationBar';
 import Axios from 'axios';
 ReactDOM.render((<App/>) , document.getElementById('root'));
-ReactDOM.render((<NavBar/>) , document.getElementById('navbar'));
 
 Axios.defaults.baseURL = "https://api.github.com/repos";
 

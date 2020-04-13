@@ -30,8 +30,10 @@ class Chart extends PureComponent {
         const requestVue     = axios.get(this.state.urls.urlVue)
         const requestAurelia = axios.get(this.state.urls.urlMeteor)
         const requestAngular = axios.get(this.state.urls.urlAngular)
-        
-        axios.all([requestReact,  requestVue, requestAngular , requestAurelia])
+        const requestThree =  axios.get(this.state.urls.urlThree)
+        const requestEmber = axios.get(this.state.urls.urlEmber)
+
+        axios.all([requestReact,  requestVue, requestAngular , requestAurelia , requestThree , requestEmber])
             .then(res => res.map(r => r.data))
             .then(resChanged => resChanged.map(rc => ({...rc, name : rc.name.toUpperCase()})))
             .then(resUpdated => {
@@ -64,13 +66,12 @@ class Chart extends PureComponent {
     render() {
         this.ordenar(this.state.repos)
 
-
+ 
         return (
             <div className="chart_container">
                 <div className="charts_header">
-                    <h1 style={{ textAlign: "center" }}>Most Popular Frameworks</h1>
+                    <h1 onClick={this.executeRequests} style={{ textAlign: "center" } }>Most Popular Frameworks</h1>
                 </div>
-                <button onClick={this.executeRequests} style={{ marginTop: "2vw" }}>show charts</button>
                 <div className="charts_body_container">
                     {this.state.repos.map((props , i) => {
                         return (

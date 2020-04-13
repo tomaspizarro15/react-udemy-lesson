@@ -6,9 +6,11 @@ import  logoBrand from './iconbrand.png'
 const BrandLogo = (props) => {
 
     return (
-        <div className="nav_bar_logo" onClick = {props.click}>
-            <img src = {logoBrand} alt = "brand_logo" className ="brand_logo" ></img>
+       <a href ="/">
+            <div className="nav_bar_logo" onClick = {props.click}>
+            <img src = {logoBrand} alt = "brand_logo" className ="brand_logo"></img>
         </div>
+       </a>
     );
 }
 
