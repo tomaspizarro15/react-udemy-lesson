@@ -60,7 +60,7 @@ class Chart extends PureComponent {
             // a must be equal to b
             return 0;
         });
-        console.log(repos)
+
     }
 
     render() {

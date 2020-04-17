@@ -93,13 +93,18 @@ class NavBar extends Component {
     render() {
 
         let downloadComponentClasses = 'download_component_container'
-        let arrowClasses = 'arrow'
+        let arrowClasses = 'arrow'; 
+        let userStatus = localStorage.getItem("status");
+        console.log("[ResponsiveNavigationBar.js] localStore ::::::>" , userStatus)
+
 
         if (!this.state.sliderStatus) {
             arrowClasses = 'arrow close'
             downloadComponentClasses = 'download_component_container close'
         }
+
         return (
+
 
             <div className="container">
                 <div className="navigation_bar">

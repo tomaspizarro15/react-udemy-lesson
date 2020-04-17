@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Chart.css';
-import starIcon from './iconstar.png'
+
 
 
 const chartComponent = (props) => {
@@ -8,8 +8,7 @@ const chartComponent = (props) => {
     let starsValue = [props.stars / 4000, "vw"]
     starsValue = starsValue.join("")
     starsValue = starsValue.toString();
-    console.log("VALOR =====>", starsValue);
-
+    
     let body;
 
     if (props.status === 2) {

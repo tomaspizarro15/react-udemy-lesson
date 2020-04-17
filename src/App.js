@@ -29,7 +29,7 @@ class Componente1 extends Component {
     showPersons: true,
     showInfo: false,
     showDatosDelUsuario: true,
-    userLogIn : false, 
+
   }
 
 
@@ -57,6 +57,9 @@ class Componente1 extends Component {
       if (person.id === id) {
         return person.id;
       }
+      else{
+        return null;
+      }
 
     })
     const person = {
@@ -73,9 +76,6 @@ class Componente1 extends Component {
       { persons: newPersonsArray }
     )
   }
-
-
-
 
   edadChangedHandler = (event, id) => {
 
@@ -104,18 +104,16 @@ class Componente1 extends Component {
   }
   render() {
 
-    let logInComponent = null; 
-    
+    let logInComponent = null;
+    let status = localStorage.getItem("status")
 
-    if(!this.state.userLogIn) {
-
+    console.log("[App.js] localStorage :::::>", status)
+    if (!this.state.userLogIn) {
 
       logInComponent = (
-        <LogIn/>
-      ) 
-
-
-
+        <LogIn
+        ></LogIn>
+      )
     }
 
     return (
@@ -123,9 +121,9 @@ class Componente1 extends Component {
         <NavBar />
         <Backdrop />
         <Route path="/" exact render={() => <MainComponents />} />
-        <Route path="/account" exact render ={() => <AccountComponent/>}/>
+        <Route path="/account" exact render={() => <AccountComponent />} />
         <SideDrawer />
-        {logInComponent}
+        <Route path="/login" exact render={() => [logInComponent]} />
       </BrowserRouter>
     )
   }

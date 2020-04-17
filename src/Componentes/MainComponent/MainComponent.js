@@ -4,7 +4,6 @@ import HeadComponent from './HeadComponent/HeadComponent';
 import AboutComponent from './AboutComponent/AboutComponent';
 import './AboutComponent/AboutComponent.css'
 import MarkingDot from './MarkingDot/MarkingDot';
-import SliderButton from './AboutComponent/SliderButtons/SliderButton';
 import LowSliderButton from '../LowComponent/LowSliderButton/LowSliderButton';
 import LogoAngular from './WebsiteLowComponentImages/iconAngular.png'
 import LogoReact from './WebsiteLowComponentImages/iconReact.png';
@@ -197,8 +196,12 @@ class MainComponents extends Component {
         }
     }
 
+    
+
     //RENDERING
     render() {
+
+        let status = localStorage.getItem("status");
 
         let aboutTranslate = ["translateX(", this.state.aboutTransformValue, "vw)"];
         let translation = ["translateX(", this.state.transformValue, "vw)"];
@@ -215,7 +218,7 @@ class MainComponents extends Component {
         return (
             <div style={{ position: "absolute", height: "100%", width: "100%", alignItems: "center"}} >
                 <HeadComponent
-
+                    status = {status}
                 />
                 <div className="low_component_background">
                     <LowSliderButton
@@ -256,15 +259,13 @@ class MainComponents extends Component {
                                     />
                                 )
                             })
-
                         }
-
                     </ul>
                     <div className="dot_container">
-                        {this.state.AboutComponentContenidos.map(dot => {
+                        {this.state.AboutComponentContenidos.map((dot , i) => {
                             return (
                                 <MarkingDot
-                                    key = {dot.id}
+                                    key = {i}
                                     isActive={dot.isActive}
                                 />
                             )
