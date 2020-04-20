@@ -9,7 +9,10 @@ import BrandLogo from './BrandLogo';
 import SocialMedia from './SocialMediaComponent/SocialMedia';
 class NavBar extends Component {
 
+
     state = {
+
+        
 
         modals: [
             { id: 0, boton: "Web", titulo: "Desarrollo Web", formulario: "Aprender Web developing es uno los objetivos mas buscados en la industria hoy en dia . A continuacion te explicaremos todo sobre el desarrolo , la industria y la flexibilidad de nuestro rubro . Dejanos introducirte a distintas plataformas de Aprendizaje ajustandose a tu comodidad", contenido: "Aprender desarrollo web:contamos con cursos diversos para Front-end : en lenguajes como Javascript,Python , incluyendo todo tipo de frameworks como React, Angular , Vue.js , TypeScript y Back-end : con especializacion en bases de datos tipo :  mySQL y noSQL , hasta inclusive quizas en un futuro puedas desarrollarte en la industria como programador Full-Stack en desarollo web." },

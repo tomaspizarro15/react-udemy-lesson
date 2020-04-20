@@ -72,8 +72,6 @@ class SideDrawer extends PureComponent {
                                 key={i}
                                 text={props.text}
                                 href={props.href}
-
-
                             />
 
                         )

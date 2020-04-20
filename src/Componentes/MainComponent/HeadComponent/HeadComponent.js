@@ -1,5 +1,6 @@
 import React from 'react';
 import './HeadComponent.css'
+import { Link } from 'react-router-dom';
 
 
 const HeadComponent = (props) => {
@@ -20,7 +21,7 @@ const HeadComponent = (props) => {
         <div className="head_component">
             <div className ="head_bubble_bottom"></div>
             <h1>Bienvenido a RFCode:</h1>
-            <button onClick = {testHandler}><a  style = { {color :"#2b2b2b" , textDecoration :"none"} }href = "/login">Comenzar</a></button>
+            <button onClick = {testHandler}><Link style = { {color :"#2b2b2b" , textDecoration :"none"} } to = "/">Comenzar</Link></button>
             <div className ="head_bubble_top"></div>
         </div>
     );

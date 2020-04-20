@@ -1,11 +1,11 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 
 const lists = (props) => {
     return (
 
         <li>
-            <a href={props.href} onClick={props.click}>{props.text}</a>
+            <Link to={props.href} onClick={props.click}>{props.text}</Link>
         </li>
 
     );

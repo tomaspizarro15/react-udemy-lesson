@@ -7,10 +7,11 @@ import SideDrawer from './Componentes/SideDrawer/SideDrawer';
 import { BrowserRouter, Route } from 'react-router-dom';
 import NavBar from './Componentes/NavigationBar/ResponsiveNavigationBar';
 import AccountComponent from './RoutingComponents/AccountComponent/AccountComponent';
-import LogIn from './Componentes/LogIn/LogInComponent';
+import LogIn from './Componentes/Forms/LogInComponent';
 
 
 class Componente1 extends Component {
+
 
   constructor(props) {
     super(props);
@@ -104,26 +105,14 @@ class Componente1 extends Component {
   }
   render() {
 
-    let logInComponent = null;
-    let status = localStorage.getItem("status")
-
-    console.log("[App.js] localStorage :::::>", status)
-    if (!this.state.userLogIn) {
-
-      logInComponent = (
-        <LogIn
-        ></LogIn>
-      )
-    }
-
     return (
       <BrowserRouter>
         <NavBar />
         <Backdrop />
-        <Route path="/" exact render={() => <MainComponents />} />
+        <Route path="/home" exact render={() => <MainComponents />} />
         <Route path="/account" exact render={() => <AccountComponent />} />
         <SideDrawer />
-        <Route path="/login" exact render={() => [logInComponent]} />
+        <Route  path="/"  exact render={() => <LogIn/>} />
       </BrowserRouter>
     )
   }
