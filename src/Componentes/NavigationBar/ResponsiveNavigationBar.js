@@ -7,6 +7,7 @@ import Modal from '../Modal/Modal';
 import NavigationInput from './NavigationInput';
 import BrandLogo from './BrandLogo';
 import SocialMedia from './SocialMediaComponent/SocialMedia';
+import { Link } from 'react-router-dom';
 class NavBar extends Component {
 
 
@@ -126,6 +127,7 @@ class NavBar extends Component {
 
                         })}
                     </div>
+                    <Link to = "/usuarios">Test </Link>
                     <div className="social_media_logos ">
                         <SocialMedia />
                     </div>

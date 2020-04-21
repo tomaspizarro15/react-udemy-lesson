@@ -3,7 +3,7 @@ import './LogInComponent.css';
 import Input from './Input/Input';
 import Introduction from './Introduction/Introduction';
 import axios from './axios-requests';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 
 
 class LogIn extends PureComponent {
@@ -20,6 +20,16 @@ class LogIn extends PureComponent {
         },
 
         registerInput: {
+            
+            userName : {
+                elementTitle: "Nombre de Usuario",
+                elementType: "input",
+                elementConfig: {
+                    type: "text",
+                    placeholder: "username"
+                },
+                value: ""
+            },
 
             nombre: {
                 elementTitle: "Nombres",
@@ -112,23 +122,27 @@ class LogIn extends PureComponent {
 
     }
 
-    registerSubmitHandler = () => {
+    registerSubmitHandler = (event) => {
+
+        event.preventDefault(); 
  
-
         const registerData = {};
-
-
         for (let identifier in this.state.registerInput) {
 
             registerData[identifier] = this.state.registerInput[identifier].value;
-
+            
         }
 
         axios.post('/users.json', registerData)
             .then(response => console.log(response))
             .catch(error => console.log(error))
+    }
 
-            this.registerSubmitHandler.reset() ; 
+    goHomeHandler = () => {
+
+        return(
+            <Route path = "/"/>
+        )
 
     }
 
@@ -147,7 +161,7 @@ class LogIn extends PureComponent {
 
 
         form = (
-            <form onSubmit={this.registerSubmitHandler} >
+            <form onSubmit={this.registerSubmitHandler} action ="/home" >
                 <Introduction
                     title={this.state.introductionData.title}
                     text={this.state.introductionData.text}
@@ -167,7 +181,7 @@ class LogIn extends PureComponent {
                                 />
                             )
                         })}
-                        <button type = "submit"></button>
+                        <button type ="submit">Create account</button>
                       
                     </div>
                 </div>

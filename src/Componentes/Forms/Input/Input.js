@@ -1,10 +1,12 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
 import './Input.css';
 
 
 const Input = (props) => {
 
     let inputElement = null;
+    console.log(props)
 
     switch (props.elementtype) {
         case ('input'):
@@ -54,4 +56,4 @@ const Input = (props) => {
 
 }
 
-export default Input; 
+export default withRouter(Input); 

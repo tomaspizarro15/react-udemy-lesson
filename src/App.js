@@ -8,6 +8,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import NavBar from './Componentes/NavigationBar/ResponsiveNavigationBar';
 import AccountComponent from './RoutingComponents/AccountComponent/AccountComponent';
 import LogIn from './Componentes/Forms/LogInComponent';
+import UserList from './RoutingComponents/ListaDeUsuarios/Users';
 
 
 class Componente1 extends Component {
@@ -113,6 +114,7 @@ class Componente1 extends Component {
         <Route path="/account" exact render={() => <AccountComponent />} />
         <SideDrawer />
         <Route  path="/"  exact render={() => <LogIn/>} />
+        <Route path = "/users"  render = {() => <UserList/>}/>
       </BrowserRouter>
     )
   }
