@@ -4,13 +4,11 @@ import Backdrop from './Componentes/Backdrop/Backdrop';
 import './App.css';
 import MainComponents from './Componentes/MainComponent/MainComponent';
 import SideDrawer from './Componentes/SideDrawer/SideDrawer';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from './Componentes/NavigationBar/ResponsiveNavigationBar';
 import AccountComponent from './RoutingComponents/AccountComponent/AccountComponent';
 import LogIn from './Componentes/Forms/LogInComponent';
 import UserList from './RoutingComponents/ListaDeUsuarios/Users';
-
-
 class Componente1 extends Component {
 
 
@@ -31,6 +29,7 @@ class Componente1 extends Component {
     showPersons: true,
     showInfo: false,
     showDatosDelUsuario: true,
+    auth : true, 
 
   }
 
@@ -59,7 +58,7 @@ class Componente1 extends Component {
       if (person.id === id) {
         return person.id;
       }
-      else{
+      else {
         return null;
       }
 
@@ -106,20 +105,26 @@ class Componente1 extends Component {
   }
   render() {
 
+
     return (
       <BrowserRouter>
         <NavBar />
-        <Backdrop />
-        <Route path="/home" exact render={() => <MainComponents />} />
-        <Route path="/account" exact render={() => <AccountComponent />} />
-        <SideDrawer />
-        <Route  path="/"  exact render={() => <LogIn/>} />
-        <Route path = "/users"  render = {() => <UserList/>}/>
-      </BrowserRouter>
-    )
-  }
-}
+        <Backdrop />      
+          <SideDrawer />
+          <Route path="/" exact render={() => <LogIn />} />
+          <Switch>
+          <Route path="/home" exact component={MainComponents} />
+          <Route path="/account" exact component={AccountComponent} />
+          {this.state.auth ?   
+          <Route path="/users/" component={UserList} />
+           : <Redirect to ="/"/>}
+          </Switch>
+        </BrowserRouter>
 
+      )
+    }
+  }
+    
 export default Componente1;
 
 

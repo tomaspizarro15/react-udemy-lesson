@@ -127,7 +127,7 @@ class NavBar extends Component {
 
                         })}
                     </div>
-                    <Link to = "/usuarios">Test </Link>
+                    <Link to = "/users">Test </Link>
                     <div className="social_media_logos ">
                         <SocialMedia />
                     </div>

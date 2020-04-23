@@ -5,26 +5,39 @@ import './Input.css';
 
 const Input = (props) => {
 
-    let inputElement = null;
-    console.log(props)
+
+    let border; 
+
+   
+    if(props.valid === false) {
+
+        border = "2px solid red"
+
+    }else {
+
+        border = "2px solid green"
+
+    }
+
+    let element = null;
 
     switch (props.elementtype) {
         case ('input'):
-            inputElement = <input
+            element = <input style = {{border : border}}
                 onChange={props.change}
                 value={props.value}
                 {...props.elementConfig}
             />
             break;
         case ("textarea"):
-            inputElement = <textarea
+            element = <textarea
                 onChange={props.change}
                 {...props.elementConfig}
                 value={props.value}
             />
             break;
         case ('select'):
-            inputElement =
+            element =
                 <select value={props.value}
                     onChange={props.change}>
                     {props.elementConfig.options.map((option, i) => {
@@ -40,7 +53,7 @@ const Input = (props) => {
 
                 </select>
             break;
-        default: inputElement = null;
+        default: element = null;
     }
 
 
@@ -48,7 +61,7 @@ const Input = (props) => {
         <div className="form_container">
             <label>
                 <p className ="form_p">{props.elementTitle}</p>
-                {inputElement}
+                {element}
             </label>
         </div>
     )

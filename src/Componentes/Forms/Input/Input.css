@@ -54,7 +54,7 @@ form {
 
 .form_container input:focus {
   transition: background-color 400ms linear;
-  background-color: rgba(255, 102, 0 , 0.75);
+  background-color: #ccc;
 }
 
 .register_body button {
