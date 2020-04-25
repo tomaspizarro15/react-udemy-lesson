@@ -1,19 +1,25 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import './Input.css';
 
 
 const Input = (props) => {
 
 
-    let border; 
+    let border;
+    let alert = "input_alert"
 
-   
-    if(props.valid === false) {
+
+    if (!props.valid && props.touched) {
 
         border = "2px solid red"
+        alert = "input_alert active"
 
-    }else {
+    } else if (!props.touched) {
+
+        border = "2px solid #ccc"
+
+    } else if (props.valid && props.touched) {
 
         border = "2px solid green"
 
@@ -23,11 +29,16 @@ const Input = (props) => {
 
     switch (props.elementtype) {
         case ('input'):
-            element = <input style = {{border : border}}
+            element = (<div>
+                <input 
+                style={{ border: border }}
                 onChange={props.change}
                 value={props.value}
                 {...props.elementConfig}
             />
+                <p className ={alert}>{props.alert}</p>
+                </div>
+            )
             break;
         case ("textarea"):
             element = <textarea
@@ -60,7 +71,7 @@ const Input = (props) => {
     return (
         <div className="form_container">
             <label>
-                <p className ="form_p">{props.elementTitle}</p>
+                <p className="form_p">{props.elementTitle}</p>
                 {element}
             </label>
         </div>

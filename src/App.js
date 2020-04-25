@@ -29,7 +29,21 @@ class Componente1 extends Component {
     showPersons: true,
     showInfo: false,
     showDatosDelUsuario: true,
-    auth : true, 
+    auth: true,
+    testString: "Haello woarld"
+
+  }
+
+  componentDidMount() {
+
+
+    for (let i in this.state.testString) {
+
+      if (this.state.testString[i] === "a") {
+        console.log(this.state.testString[i])
+      }
+
+    }
 
   }
 
@@ -109,22 +123,25 @@ class Componente1 extends Component {
     return (
       <BrowserRouter>
         <NavBar />
-        <Backdrop />      
-          <SideDrawer />
-          <Route path="/" exact render={() => <LogIn />} />
-          <Switch>
+        <Backdrop />
+        <SideDrawer />
+        <Route path="/" exact render={() => <LogIn />} />
+        <Switch>
           <Route path="/home" exact component={MainComponents} />
           <Route path="/account" exact component={AccountComponent} />
-          {this.state.auth ?   
-          <Route path="/users/" component={UserList} />
-           : <Redirect to ="/"/>}
-          </Switch>
-        </BrowserRouter>
+          {this.state.auth ?
+            <React.Fragment>
+              <Route path="/users/" component={UserList} />
+              <Route path="/login" component={loginForm} />
+            </React.Fragment> : <Redirect to="/" />
+          }
+        </Switch>
+      </BrowserRouter>
 
-      )
-    }
+    )
   }
-    
+}
+
 export default Componente1;
 
 

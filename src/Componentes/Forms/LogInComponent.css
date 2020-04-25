@@ -42,15 +42,21 @@
     
 }
 
-.login button {
+.button_submit {
   margin-top: 1vw;
   border-radius: 15px;
-  width: 8vw;
-  height: 2vw;
+  width: 12vw;
+  height: 3vw;
   color: white;
   background-color: #2b2b2b;
   box-shadow:  0px 0px 10px -3px black;
   border: 0px;
+  font-size: 1.5vw;
+  transition : background-color 200ms linear; 
+}
+.button_submit.invalid {
+  background-color: #9b9b9b;
+  transition : background-color 200ms linear; 
 }
 
 .login button:focus {
