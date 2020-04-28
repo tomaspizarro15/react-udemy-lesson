@@ -8,6 +8,12 @@ import UserProfile from './UserProfile/UserProfile';
 
 class UserList extends PureComponent {
 
+    constructor() {
+        super()
+        console.log("ROUTING PROPS",this.props)
+
+    }
+
 
     state = {
 
@@ -25,7 +31,7 @@ class UserList extends PureComponent {
         })
 
     render() {
-    
+        
         let users = []
         let list = {};
         let index = 0;
@@ -69,7 +75,7 @@ class UserList extends PureComponent {
 
                 </div>
                 {list}
-                <Route path={ this.props.match.url + "/:id"} exact component={UserProfile} />
+                <Route path={ this.props.match.url + "/:id"} component={UserProfile} />
             </div>  
         );
     }

@@ -3,7 +3,12 @@ import './LogInComponent.css';
 import Input from './Input/Input';
 import Introduction from './Introduction/Introduction';
 import axios from './axios-requests';
-import { Route, Redirect, Link } from 'react-router-dom';
+import { Route, Redirect, Link ,Switch } from 'react-router-dom';
+import MainComponents from '../MainComponent/MainComponent';
+import AccountComponent from '../../RoutingComponents/AccountComponent/AccountComponent';
+import UserList from '../../RoutingComponents/ListaDeUsuarios/Users';
+import auth from '../../GlobalVariables/Autentificacion';
+import autentification from '../../GlobalVariables/Autentificacion';
 
 
 class LogIn extends PureComponent {
@@ -231,7 +236,6 @@ class LogIn extends PureComponent {
         updatedRegisterElement.valid = this.checkValidationHandler(updatedRegisterElement.value, updatedRegisterElement.validation, updatedRegisterElement.unique)
         updatedRegisterElement.touched = true;
 
-
         updatedRegister[identifier] = updatedRegisterElement;
 
         let validInput = true;
@@ -269,6 +273,7 @@ class LogIn extends PureComponent {
 
     render() {
 
+        
         let form;
         let formElementsArray = [];
         let redirect = null;
@@ -292,7 +297,6 @@ class LogIn extends PureComponent {
             )
         }
         form = (
-
             <form onSubmit={this.registerSubmitHandler}>
                 <Introduction
                     title={this.state.introductionData.title}
@@ -318,7 +322,7 @@ class LogIn extends PureComponent {
                                 />
                             )
                         })}
-                        <button type="submit" disabled={!this.state.validInput} className={submitButton}>Register</button>
+                        <button type="submit" disabled={!this.state.validInput} className={submitButton} onClick = {autentification}>Register</button>
                         <div>
                             <Link to="/login">i have an account</Link>
                         </div>

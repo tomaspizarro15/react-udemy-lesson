@@ -9,12 +9,18 @@ import NavBar from './Componentes/NavigationBar/ResponsiveNavigationBar';
 import AccountComponent from './RoutingComponents/AccountComponent/AccountComponent';
 import LogIn from './Componentes/Forms/LogInComponent';
 import UserList from './RoutingComponents/ListaDeUsuarios/Users';
+import autentification from './GlobalVariables/Autentificacion';
+import LoginForm from './Componentes/Forms/Login/LoginForm';
+
+let auth; 
+
 class Componente1 extends Component {
 
 
   constructor(props) {
     super(props);
     console.log('[App.js] constructor')
+
   }
 
   state = {
@@ -29,24 +35,16 @@ class Componente1 extends Component {
     showPersons: true,
     showInfo: false,
     showDatosDelUsuario: true,
-    auth: true,
+    authen: true,
     testString: "Haello woarld"
 
   }
 
   componentDidMount() {
 
-
-    for (let i in this.state.testString) {
-
-      if (this.state.testString[i] === "a") {
-        console.log(this.state.testString[i])
-      }
-
-    }
+    this.setState({ authen: auth })
 
   }
-
 
   mostrarObjetoHandler = () => {
 
@@ -117,8 +115,10 @@ class Componente1 extends Component {
 
     this.setState({ showSideDrawer: !newShowSideDrawer })
   }
-  render() {
 
+  render() {
+     auth = autentification();
+    console.log("APP.JS GLOBAL VAR", console.log(auth))
 
     return (
       <BrowserRouter>
@@ -126,16 +126,16 @@ class Componente1 extends Component {
         <Backdrop />
         <SideDrawer />
         <Route path="/" exact render={() => <LogIn />} />
-        <Switch>
-          <Route path="/home" exact component={MainComponents} />
-          <Route path="/account" exact component={AccountComponent} />
-          {this.state.auth ?
-            <React.Fragment>
-              <Route path="/users/" component={UserList} />
-              <Route path="/login" component={loginForm} />
-            </React.Fragment> : <Redirect to="/" />
-          }
-        </Switch>
+        <Route path ="/login" exact component = {LoginForm}/>
+        {auth  ?
+          <Switch>
+            <Route path="/home" exact component={MainComponents} />
+            <Route path="/account" exact component={AccountComponent} />
+            <Route path="/users/" component={UserList}/>
+            </Switch> : <Redirect to="/" />
+        }
+
+
       </BrowserRouter>
 
     )

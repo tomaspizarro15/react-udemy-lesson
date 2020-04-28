@@ -8,6 +8,7 @@ import NavigationInput from './NavigationInput';
 import BrandLogo from './BrandLogo';
 import SocialMedia from './SocialMediaComponent/SocialMedia';
 import { Link } from 'react-router-dom';
+import autentification from '../../GlobalVariables/Autentificacion';
 class NavBar extends Component {
 
 
@@ -96,6 +97,8 @@ class NavBar extends Component {
 
     render() {
 
+      
+
         let downloadComponentClasses = 'download_component_container'
         let arrowClasses = 'arrow'; 
         let userStatus = localStorage.getItem("status");
@@ -152,13 +155,11 @@ class NavBar extends Component {
                     <div className="download_component">
                         {this.state.typesOfCourses.map(props => {
                             return (
-
                                 <DownloadComponent
                                     key={props.id}
                                     titulo={props.titulo}
                                     contenido={props.contenido}
                                 />
-
                             )
                         })}
                         <div className="download_component_arrow">
