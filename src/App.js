@@ -7,7 +7,7 @@ import SideDrawer from './Componentes/SideDrawer/SideDrawer';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from './Componentes/NavigationBar/ResponsiveNavigationBar';
 import AccountComponent from './RoutingComponents/AccountComponent/AccountComponent';
-import LogIn from './Componentes/Forms/LogInComponent';
+import LogIn from './Componentes/Forms/RegisterComponent';
 import UserList from './RoutingComponents/ListaDeUsuarios/Users';
 import autentification from './GlobalVariables/Autentificacion';
 import LoginForm from './Componentes/Forms/Login/LoginForm';

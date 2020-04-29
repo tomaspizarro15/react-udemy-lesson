@@ -61,7 +61,7 @@ form {
 
 .form_container input:focus {
   transition: background-color 400ms linear;
-  background-color: #ccc;
+  background-color:#ccc;
 }
 
 .register_body button:active {

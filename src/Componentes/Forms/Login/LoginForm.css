@@ -46,7 +46,7 @@
     width: 100%;
     height: 50%;
 }
-.login_form_body input {
+.login_form_input {
     width: 75%;
     height: 25px;
     text-indent: 5px;
@@ -55,7 +55,19 @@
     border: 2px solid #aaa;
     transition: border-color 300ms ease-in-out;
 }
-.login_form_body input:focus {
+.login_form_input.invalid {
+    border: 2px solid red;
+}
+.login_form_input.invalid:focus {
+    border: 2px solid red;
+}
+.login_form_input.valid:focus{
+    border: 2px solid green;                                                                            
+}
+.login_form_input.valid{
+    border: 2px solid green;
+}
+.login_form_input:focus {
     border: 2px solid rgb(255,102,0);
     transition: border-color 300ms ease-in-out;
 }
@@ -74,4 +86,9 @@
     background-color: rgb(255,102,0);
     transition: background-color 200ms ease-in-out;
     cursor: pointer;
+}
+.login_form a {
+    margin: 0 0 5px 0;
+    color: #2b2b2b;
+    text-decoration: underline;
 }

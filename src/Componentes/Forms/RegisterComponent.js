@@ -3,11 +3,7 @@ import './LogInComponent.css';
 import Input from './Input/Input';
 import Introduction from './Introduction/Introduction';
 import axios from './axios-requests';
-import { Route, Redirect, Link ,Switch } from 'react-router-dom';
-import MainComponents from '../MainComponent/MainComponent';
-import AccountComponent from '../../RoutingComponents/AccountComponent/AccountComponent';
-import UserList from '../../RoutingComponents/ListaDeUsuarios/Users';
-import auth from '../../GlobalVariables/Autentificacion';
+import { Redirect, Link } from 'react-router-dom';
 import autentification from '../../GlobalVariables/Autentificacion';
 
 
@@ -273,7 +269,7 @@ class LogIn extends PureComponent {
 
     render() {
 
-        
+
         let form;
         let formElementsArray = [];
         let redirect = null;
@@ -322,10 +318,11 @@ class LogIn extends PureComponent {
                                 />
                             )
                         })}
-                        <button type="submit" disabled={!this.state.validInput} className={submitButton} onClick = {autentification}>Register</button>
-                        <div>
-                            <Link to="/login">i have an account</Link>
+                        <div className="login_anchor">
+                            <Link to="/login">I have an account</Link>
                         </div>
+                        <button type="submit" disabled={!this.state.validInput} className={submitButton} onClick={autentification}>Register</button>
+
                     </div>
                 </div>
             </form>

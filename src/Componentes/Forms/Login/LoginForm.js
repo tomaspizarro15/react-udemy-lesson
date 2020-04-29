@@ -3,7 +3,9 @@ import './LoginForm.css';
 import Form from './Form';
 import ToggleButton from './ToggleButton/ToggleButton';
 import Axios from './../axios-requests';
-
+import auth from './../../../GlobalVariables/Autentificacion';
+import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 
 class LoginForm extends PureComponent {
 
@@ -27,7 +29,7 @@ class LoginForm extends PureComponent {
             }
         },
         userData: {},
-        validUser: false,
+        validUser: 0,
         toggleButton: false,
         regPassword: "",
         regUsername: "",
@@ -58,42 +60,54 @@ class LoginForm extends PureComponent {
         const registeredData = { ...this.state.userData };
         const submitedPassword = this.state.inputs.password.value;
         const submitedUsername = this.state.inputs.username.value;
-        let isValid = false; 
+        let isValid = this.state.validUser; 
+        let keepSearching = true; 
 
-        for (let id in registeredData) {
+        console.log("Data recieved", registeredData);
 
-            let validPassword = false;
-            let validUserName = false;
+       
 
-            if (submitedPassword === registeredData[id].contraseña) {
+            for (let id in registeredData) {
 
-                validPassword = true;
+                let validPassword = false;
+                let validUserName = false;
+            
+                
+                console.log("Contraseña", registeredData[id].contraseña)
+                console.log("Contraseña ingresada", submitedPassword)
+                console.log("Usuario", registeredData[id].userName)
+                console.log("Usuario ingresado", submitedUsername)
 
+                if (submitedPassword === registeredData[id].contraseña) {
+
+                    validPassword = true;
+                }
+                if (submitedUsername === registeredData[id].userName) {
+
+                    validUserName = true;
+
+                }
+
+                if (validPassword && validUserName) {
+
+                    isValid = 2;
+                    this.setState({ validUser: isValid })
+                    break; 
+
+
+                } else {
+
+                    isValid = 1;
+                    this.setState({ validUser: isValid })
+
+                }
             }
 
-            if (submitedUsername === registeredData[id].userName) {
-
-                validUserName = true;
-
-            }
+        console.log("submited data", submitedPassword, submitedUsername)
 
 
-            console.log(validPassword)
-            console.log(validUserName)
 
-            if (validPassword && validUserName) {
-
-              isValid = true; 
-
-            }
-
-        }
-
-        console.log("Backend data", registeredData)
-        console.log("Frontend data", submitedUsername)
-        console.log("Frontend data", submitedPassword)
-
-        return(isValid)
+        return (isValid)
     }
 
 
@@ -115,13 +129,13 @@ class LoginForm extends PureComponent {
 
         this.validateLoginValues();
 
-        let ejemplo = this.inputChangeHandler; 
-        
-        ejemplo()
+        console.log(auth())
 
     }
 
     render() {
+        let alert = null;
+        let register = null;
         let title = "<RFC/>"
         let input = [];
 
@@ -136,13 +150,20 @@ class LoginForm extends PureComponent {
             )
 
         }
+        if (this.state.validUser === 2) {
+
+            register = (<Redirect to="/home" />)
+
+        }
 
         return (
+
             <div className="login_form_container">
+                {register}
                 <form className="login_form" onSubmit={this.submitFormHandler} >
                     <div className="login_form_header">
                         <h1>{title}</h1>
-                        <h1>Welcome</h1>
+                        <h1>Bienvenido</h1>
                     </div>
                     <div className="login_form_body">
                         <h1 style={{ fontSize: "25px", margin: "0" }}>Iniciar sesión</h1>
@@ -152,12 +173,14 @@ class LoginForm extends PureComponent {
                                     config={props.config}
                                     key={props.id}
                                     changed={(event) => this.inputChangeHandler(event, props.id)}
+                                    status={this.state.validUser}
                                 />
                             )
                         })
                         }
                     </div>
                     <button type="submit">Iniciar sesión</button>
+                    <Link to="/">No tengo una cuenta</Link>
                     <ToggleButton
                         active={this.state.toggleButton}
                         toggle={this.rememberButtonHandler}
